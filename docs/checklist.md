@@ -50,7 +50,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Verify: Simulate add + checkout → modal → Reject (no receipt) → checkout again → Approve → receipt. Change qty while modal open if possible and confirm stale approve fails.
   **Checkpoint:** Learner confirms the approval moment is impossible to miss.
 
-- [ ] **7. WebMCP thin registration + status banner**
+- [x] **7. WebMCP thin registration + status banner**
   Spec ref: `spec.md > WebMCP registration` + `spec.md > Runtime & Deployment`
   What to build: `detect.ts`, `registerTools.ts` with AbortSignal lifecycle, `readOnlyHint` annotations, execute → `harness.run`. `WebmcpStatus` banner. Fallback copy for unsupported browsers.
   Acceptance: In Chrome with flag, Inspector (or `getTools`) lists five tools. Unsupported browser still has simulate path. Duplicate-registration handled (Strict Mode).
@@ -75,7 +75,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Acceptance: `vitest` green; clone instructions work from README.
   Verify: Fresh `npm i && npm test && npm run build`.
 
-- [ ] **11. Deploy to Vercel**
+- [x] **11. Deploy to Vercel**
   Spec ref: `spec.md > Runtime & Deployment`
   What to build: Production deploy, HTTPS live URL, confirm client bundle registers tools only in browser.
   Acceptance: Live URL loads the luxury shell; simulate path works without local Chrome flags; document URL in README.

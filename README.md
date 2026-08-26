@@ -16,6 +16,7 @@
 
 [![Strategy](https://img.shields.io/badge/📘_PROJECT.md-Locked-00f5ff?style=for-the-badge)](PROJECT.md)
 [![Spec](https://img.shields.io/badge/📐_Spec-docs/spec.md-4ade80?style=for-the-badge)](docs/spec.md)
+[![Live](https://img.shields.io/badge/Live-olympus--mcp--harness.vercel.app-00C7B7?style=for-the-badge)](https://olympus-mcp-harness.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Olympusxvn/olympus--mcp--harness-181717?style=for-the-badge&logo=github)](https://github.com/Olympusxvn/olympus-mcp-harness)
 
 <br />
@@ -87,7 +88,7 @@ npm run dev
 
 | 🔗 Resource | 📍 Link |
 |:------------|:--------|
-| **🌐 Live URL** | Added at submit (Vercel HTTPS) |
+| **🌐 Live URL** | [https://olympus-mcp-harness.vercel.app](https://olympus-mcp-harness.vercel.app) |
 | **📘 Strategy lock** | [PROJECT.md](PROJECT.md) |
 | **📐 Spec** | [docs/spec.md](docs/spec.md) |
 | **✅ Build plan** | [docs/checklist.md](docs/checklist.md) |
@@ -245,8 +246,8 @@ Hackathon definition of done lives in [PROJECT.md](PROJECT.md) §23. Build seque
 - [x] Checkout approval bound to exact arguments
 - [x] Trace + honest metrics
 - [x] One safe failure path
-- [ ] Five WebMCP tools on the **live** page (Vercel — step 11)
-- [ ] Vercel live URL
+- [x] Vercel live URL — [olympus-mcp-harness.vercel.app](https://olympus-mcp-harness.vercel.app)
+- [x] Five WebMCP tools listed (Chrome 151+ flag on / ChatGPT in-app browser)
 - [ ] Demo video &lt; 3 minutes
 - [ ] Repo **public** at submit (kept private until then)
 

@@ -235,6 +235,7 @@ olympus-mcp-harness/
 ├── process-notes.md
 ├── README.md
 ├── LICENSE
+├── vercel.json
 ├── package.json
 ├── tailwind.config.ts
 ├── tsconfig.json           # types: ["webmcp-types"]
