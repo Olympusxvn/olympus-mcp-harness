@@ -37,7 +37,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Acceptance: One successful `search_products` through the pipeline returns `ok: true` and verification checks.
   Verify: Vitest pipeline test + optional node REPL/script calling `harness.run`.
 
-- [ ] **5. Demo machine: search, get, compare, add_to_cart**
+- [x] **5. Demo machine: search, get, compare, add_to_cart**
   Spec ref: `spec.md > Demo machine` + `spec.md > WebMCP registration > Schemas`
   What to build: Implement the four tools’ `execute` bodies against in-memory store; wire Machine panel to cart/results. Simulate-agent buttons in Model panel call `harness.run` (not WebMCP yet).
   Acceptance: From the UI, search under $1500, open one product, compare two, add to cart; totals update; traces append.

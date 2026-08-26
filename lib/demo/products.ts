@@ -101,3 +101,32 @@ export function formatUsd(price: number): string {
     maximumFractionDigits: 0,
   }).format(price);
 }
+
+export function getProductById(productId: string): Product | undefined {
+  return PRODUCTS.find((product) => product.id === productId);
+}
+
+export function searchProducts(query: string, maxPrice?: number): Product[] {
+  const needle = query.toLowerCase();
+  const generic = /laptop|notebook|ai|dev/.test(needle);
+  return PRODUCTS.filter((product) => {
+    const hay =
+      `${product.name} ${product.blurb} ${product.attrs.ram} ${product.attrs.gpu}`.toLowerCase();
+    const textMatch =
+      generic ||
+      hay.includes(needle) ||
+      needle.split(/\s+/).some((word) => word.length > 2 && hay.includes(word));
+    const priceMatch = maxPrice == null || product.price <= maxPrice;
+    return textMatch && priceMatch;
+  });
+}
+
+export function compareProducts(ids: string[]): Product[] {
+  return ids.map((id) => {
+    const product = getProductById(id);
+    if (!product) {
+      throw new Error(`Unknown product: ${id}`);
+    }
+    return product;
+  });
+}
