@@ -1,6 +1,9 @@
 "use client";
 
+import type { CSSProperties } from "react";
+
 import { useDemoState } from "@/components/useDemoState";
+import type { TraceEvent } from "@/lib/harness/types";
 
 const STAGES = [
   "inspect",
@@ -14,7 +17,11 @@ const STAGES = [
 export function HarnessPanel() {
   const { events } = useDemoState();
   const last = events.at(-1);
-  const current = last && last.stage !== "complete" ? last.stage : last?.stage;
+  const run = last ? events.filter((event) => event.traceId === last.traceId) : [];
+  const active =
+    last && last.stage !== "complete" ? last.stage : last?.stage;
+  const seen = new Set(run.map((event) => event.stage));
+  const errorStage = run.find((event) => event.status === "error")?.stage;
 
   return (
     <section
@@ -29,8 +36,8 @@ export function HarnessPanel() {
       </h2>
       <p className="mt-4 text-sm text-muted">Current stage</p>
       <p className="mt-1 text-sm text-foreground">
-        {current
-          ? `${current}${last?.tool ? ` · ${last.tool}` : ""}`
+        {active
+          ? `${active}${last?.tool ? ` · ${last.tool}` : ""}`
           : "Idle — no invocation yet."}
       </p>
       <ol className="mt-4 flex flex-wrap gap-2">
@@ -38,13 +45,9 @@ export function HarnessPanel() {
           <li
             key={stage}
             className={`luxe-chip text-xs capitalize ${
-              current === stage ? "luxe-chip-gold" : ""
+              active === stage ? "luxe-chip-gold" : ""
             }`}
-            style={
-              stage === "approval" && current === "approval"
-                ? { borderColor: "var(--approval)", color: "var(--approval)" }
-                : undefined
-            }
+            style={chipStyle(stage, active, seen, errorStage)}
           >
             {stage}
           </li>
@@ -52,4 +55,22 @@ export function HarnessPanel() {
       </ol>
     </section>
   );
+}
+
+function chipStyle(
+  stage: (typeof STAGES)[number],
+  active: string | undefined,
+  seen: Set<TraceEvent["stage"]>,
+  errorStage: TraceEvent["stage"] | undefined,
+): CSSProperties | undefined {
+  if (errorStage === stage) {
+    return { borderColor: "var(--fail)", color: "var(--fail)" };
+  }
+  if (stage === "approval" && active === "approval") {
+    return { borderColor: "var(--approval)", color: "var(--approval)" };
+  }
+  if (seen.has(stage) && active !== stage) {
+    return { borderColor: "var(--gold-glow)", color: "var(--text-gold)" };
+  }
+  return undefined;
 }

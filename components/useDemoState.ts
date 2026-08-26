@@ -14,6 +14,7 @@ import type { HarnessResult } from "@/lib/harness/types";
 export function useDemoState() {
   useSyncExternalStore(subscribeDemo, getDemoVersion, getDemoVersion);
   useSyncExternalStore(approvals.subscribe, approvals.getVersion, approvals.getVersion);
+  useSyncExternalStore(traces.subscribe, traces.getVersion, traces.getVersion);
   const snapshot = getDemoSnapshot();
   const cart = getCart();
   const events = traces.all();

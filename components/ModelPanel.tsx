@@ -41,6 +41,14 @@ export function ModelPanel() {
           {lastResult.ok ? "ok" : lastResult.error?.code} · {lastResult.durationMs}ms
         </p>
       ) : null}
+      {lastResult && !lastResult.ok ? (
+        <p
+          className="luxe-chip mt-2 w-fit text-xs"
+          style={{ borderColor: "var(--fail)", color: "var(--fail)" }}
+        >
+          {lastResult.error?.code}
+        </p>
+      ) : null}
       <p className="mt-4 text-sm text-muted">Simulate agent</p>
       <div className="mt-2 flex flex-wrap gap-2">
         <button
@@ -93,6 +101,14 @@ export function ModelPanel() {
           onClick={() => run("checkout", "checkout", {})}
         >
           {busy === "checkout" ? "…" : "Checkout"}
+        </button>
+        <button
+          type="button"
+          className="btn-luxe-ghost px-3 py-1.5 text-xs"
+          disabled={busy !== null}
+          onClick={() => run("invalid", "search_products", { query: "   " })}
+        >
+          {busy === "invalid" ? "…" : "Invalid search"}
         </button>
       </div>
     </section>
