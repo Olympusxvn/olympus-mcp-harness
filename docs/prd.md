@@ -1,14 +1,14 @@
-# MCP Harness — Product Requirements
+# Olympus MCP Harness — Product Requirements
 
 ## Problem Statement
-Agents can now call websites through WebMCP, but the call itself is ungoverned. A shopper (or a judge acting as one) can watch an agent search laptops, dump junk into a cart, and fire checkout with bad prices or no consent. Developers exposing tools have no shared place to validate arguments, classify risk, require a human, verify the world actually changed, or show a trace. That gap is frequent (every multi-step agent session) and costly (wrong purchase, silent failure, unreproducible demo). MCP Harness is the control layer behind the WebMCP boundary for one coherent commerce demo — not a new agent.
+Agents can now call websites through WebMCP, but the call itself is ungoverned. A shopper (or a judge acting as one) can watch an agent search laptops, dump junk into a cart, and fire checkout with bad prices or no consent. Developers exposing tools have no shared place to validate arguments, classify risk, require a human, verify the world actually changed, or show a trace. That gap is frequent (every multi-step agent session) and costly (wrong purchase, silent failure, unreproducible demo). Olympus MCP Harness is the control layer behind the WebMCP boundary for one coherent commerce demo — not a new agent.
 
 ## User Stories
 
 ### Epic: First impression & thesis
 
 - As a **judge landing on the live URL**, I want the architecture and tagline visible in the first viewport so that I understand the product before any tool runs.
-  - [ ] Header shows **MCP Harness** and **The model reasons. The machine executes.**
+  - [ ] Header shows **Olympus MCP Harness** and **The model reasons. The machine executes.**
   - [ ] Three columns labeled Model / Harness / Machine are visible without scrolling on a 1280px desktop.
   - [ ] Luxury glass/gold treatment is applied (obsidian base, gold accents, frosted panels). No neon, no Walrus/World Cup branding.
   - [ ] Edge: narrow viewport stacks columns; thesis remains readable.

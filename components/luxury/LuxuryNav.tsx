@@ -7,7 +7,7 @@ const LINKS = [
 
 export function LuxuryNav({
   active = "/",
-  brand = "MCP Harness",
+  brand = "Olympus MCP Harness",
 }: {
   active?: string;
   brand?: string;

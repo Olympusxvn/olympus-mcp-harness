@@ -14,7 +14,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
 
 - [ ] **1. Scaffold Next.js app and luxury design system**
   Spec ref: `spec.md > Stack` + `spec.md > Luxury shell > Tokens and utilities`
-  What to build: `create-next-app` (App Router, TS, Tailwind) in the repo root without wiping `PROJECT.md` / `docs/`. Add CSS variables, `.luxe-*` utilities, Sora + Inter, `LuxuryNav`, `HarnessBackground`. Brand: MCP Harness. No Walrus/World Cup strings. `webmcp-types` in tsconfig.
+  What to build: `create-next-app` (App Router, TS, Tailwind) in the repo root without wiping `PROJECT.md` / `docs/`. Add CSS variables, `.luxe-*` utilities, Sora + Inter, `LuxuryNav`, `HarnessBackground`. Brand: Olympus MCP Harness. No Walrus/World Cup strings. `webmcp-types` in tsconfig.
   Acceptance: Home page renders obsidian/gold glass chrome and the tagline. Reduced-motion CSS present.
   Verify: `npm run dev` — first viewport matches luxury skill; no neon.
 
@@ -83,7 +83,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
 
 - [ ] **12. Submit your project to Devpost**
   Spec ref: `prd.md > What We're Building` (the core submission story)
-  What to build: Devpost form for [The WebMCP Challenge](https://webmcp.devpost.com/). Name **MCP Harness** (human-chosen, already locked — do not let an agent rename it). Tagline from scope. Description: why WebMCP, human+agent loop, how `registerTool` + harness were implemented. Built-with: Next.js, WebMCP, TypeScript, Vercel. Screenshots: three-column thesis, trace, **approval modal**, failure. Link public repo + license + live URL. Upload `docs/` artifacts. Demo video < 3 min with audio (script in `PROJECT.md` §22). Do not edit repo/live/Devpost after 3 Sep 2026 1:00pm PDT.
+  What to build: Devpost form for [The WebMCP Challenge](https://webmcp.devpost.com/). Name **Olympus MCP Harness** (human-chosen, already locked — do not let an agent rename it). Tagline from scope. Description: why WebMCP, human+agent loop, how `registerTool` + harness were implemented. Built-with: Next.js, WebMCP, TypeScript, Vercel. Screenshots: three-column thesis, trace, **approval modal**, failure. Link public repo + license + live URL. Upload `docs/` artifacts. Demo video < 3 min with audio (script in `PROJECT.md` §22). Do not edit repo/live/Devpost after 3 Sep 2026 1:00pm PDT.
   Acceptance: Submission complete with required fields; judges can test live URL in ChatGPT browser or Chrome+flag; video shows WebMCP + approval.
   Verify: Devpost shows submitted; README testing steps match what you just did on the live URL.
   **Checkpoint:** Definition of done in `PROJECT.md` §23.

@@ -4,7 +4,7 @@
 
 - Technical experience: self-taught founder; stack taken as locked from PROJECT.md (Next.js / TS / Tailwind / WebMCP imperative / Vercel). Did not want to re-discuss stack — “build theo PROJECT.md”.
 - Learning goals: real WebMCP + a real execution harness, not a cosmetic demo.
-- Creative sensibility: luxury-wc-ui (obsidian, gold, frosted glass). Explicit override of PROJECT.md §13 blue/purple/green palette. Brand copy stays MCP Harness; no Walrus/World Cup titles. MemWal called out as unrelated.
+- Creative sensibility: luxury-wc-ui (obsidian, gold, frosted glass). Explicit override of PROJECT.md §13 blue/purple/green palette. Brand copy stays Olympus MCP Harness; no Walrus/World Cup titles. MemWal called out as unrelated.
 - Prior SDD: none beyond PROJECT.md. First full command chain.
 - Context: contestant in The WebMCP Challenge; thesis already locked (model reasons / machine executes). Folder already had PROJECT.md + architecture/roadmap images — continued in place.
 - Energy: impatient to build, short answers, high conviction. Keep interviews tight; do not re-open the product thesis.
@@ -38,5 +38,11 @@
 - Mode: Autonomous + verification checkpoints after items 3, 6, 9, 12. No comprehension checks. Commit-after-item encoded for /build sessions where commits are allowed.
 - 12 items; larger than curriculum 15–30m slices because this is a 10-day challenge MVP.
 - Deepening rounds: 0. Learner did not gut-check item count; agent chose 12 from the 8-phase roadmap.
-- Submission: keep human-chosen name MCP Harness; video required by this challenge even though the generic checklist template calls video optional.
+- Submission: keep human-chosen name Olympus MCP Harness; video required by this challenge even though the generic checklist template calls video optional.
+
+## /build
+
+- Mode switched to step-by-step before the first item (learner: `/build step-by-step`). PROJECT.md remains the product lock.
+- GitHub: initialized a project-local repo (home directory git at `C:/Users/Admin` is not used). Remote `https://github.com/Olympusxvn/olympus-mcp-harness` — currently **private**; Devpost requires public + visible license. MIT `LICENSE` added. Pushed `main` @ `0eb5b0c`.
+
 

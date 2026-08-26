@@ -15,7 +15,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "MCP Harness",
+  title: "Olympus MCP Harness",
   description:
     "The model reasons. The machine executes. WebMCP execution control for The WebMCP Challenge.",
 };

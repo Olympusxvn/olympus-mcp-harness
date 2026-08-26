@@ -1,4 +1,4 @@
-# MCP Harness — Technical Spec
+# Olympus MCP Harness — Technical Spec
 
 ## Stack
 - **Language:** TypeScript (strict).
@@ -46,7 +46,7 @@ USER GOAL  →  MODEL (ChatGPT / Simulate panel)
 WEBMCP BOUNDARY     document.modelContext.registerTool
                     Registration → Discovery → Invocation
                     ↓ execute() is a thin wrapper
-MCP HARNESS         Discover → Validate → Authorize
+OLYMPUS MCP HARNESS Discover → Validate → Authorize
                     → Approval? → Execute (timeout) → Verify → Trace
                     ↓
 MACHINE             in-memory catalog / cart / checkout
@@ -77,7 +77,7 @@ Copy CSS variables and `.luxe-*` from `luxury-wc-ui` reference (`~/.cursor/skill
 PRD ref: `prd.md > First impression & thesis`
 
 ### Layout components
-- `LuxuryNav` — brand **MCP Harness**, links: Demo / Trace (anchors ok).
+- `LuxuryNav` — brand **Olympus MCP Harness**, links: Demo / Trace (anchors ok).
 - `HarnessBackground` — full-bleed dark texture or restrained hero image + light edge scrim (not a World Cup stadium; no blurred dim overlay).
 - Three `luxe-glass` columns: Model, Harness, Machine.
 - `ApprovalDialog` — full-viewport gold-border modal, highest z-index.

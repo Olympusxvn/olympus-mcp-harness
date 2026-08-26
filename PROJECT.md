@@ -1,14 +1,14 @@
-# MCP Harness
+# Olympus MCP Harness
 
 > **The model reasons. The machine executes.**
 >
-> MCP Harness engineers the execution boundary between AI reasoning and machine execution.
+> Olympus MCP Harness engineers the execution boundary between AI reasoning and machine execution.
 
 ---
 
 ## 1. Project Overview
 
-**MCP Harness** is a WebMCP-native execution harness for AI agents.
+**Olympus MCP Harness** is a WebMCP-native execution harness for AI agents.
 
 It sits behind the WebMCP boundary and turns model decisions into **controlled, observable, policy-aware, verifiable execution**.
 
@@ -47,7 +47,7 @@ The missing layer is an **execution harness** that makes agent-to-web actions co
 
 ## 3. Solution
 
-MCP Harness introduces five execution primitives:
+Olympus MCP Harness introduces five execution primitives:
 
 1. **DISCOVER** — understand and enrich the WebMCP capabilities available to the agent.
 2. **VALIDATE** — validate tool arguments, types, schemas, constraints, and normalized values.
@@ -66,7 +66,7 @@ Understand → Reason → Plan → Decide
 WEBMCP BOUNDARY
 Registration → Discovery → Invocation → Execution → Response
    ↓
-MCP HARNESS
+OLYMPUS MCP HARNESS
 Discover → Validate → Authorize → Execute → Verify
    ↓
 MACHINE
@@ -114,7 +114,7 @@ The machine owns:
 
 ### 4.2 The Harness Must Not Become Another Agent
 
-MCP Harness must not duplicate model reasoning.
+Olympus MCP Harness must not duplicate model reasoning.
 
 The harness should never decide business intent such as:
 
@@ -540,7 +540,7 @@ The UI should make the philosophy understandable without reading documentation.
 
 ```text
 ┌─────────────────────────────────────────────────────────┐
-│ MCP HARNESS                                             │
+│ OLYMPUS MCP HARNESS                                     │
 │ The model reasons. The machine executes.                │
 ├──────────────┬──────────────────────┬────────────────────┤
 │ MODEL        │ HARNESS              │ MACHINE            │
@@ -849,7 +849,7 @@ If time allows, compare:
 
 vs.
 
-**With MCP Harness**
+**With Olympus MCP Harness**
 
 Use a fixed set of tasks and report real results only.
 
@@ -891,7 +891,7 @@ Do not require a real credit-card purchase for judging.
 
 ### Project Name
 
-**MCP Harness**
+**Olympus MCP Harness**
 
 ### Primary Tagline
 
@@ -903,11 +903,11 @@ Do not require a real credit-card purchase for judging.
 
 ### Technical Thesis
 
-> **WebMCP defines the boundary. MCP Harness engineers the execution behind it.**
+> **WebMCP defines the boundary. Olympus MCP Harness engineers the execution behind it.**
 
 ### One-Sentence Description
 
-> **MCP Harness is a control and observability layer that turns WebMCP tool calls into validated, authorized, verifiable machine execution.**
+> **Olympus MCP Harness is a control and observability layer that turns WebMCP tool calls into validated, authorized, verifiable machine execution.**
 
 ### Avoid Saying
 
@@ -963,7 +963,7 @@ Message:
 
 ### Our Contribution
 
-**MCP Harness**
+**Olympus MCP Harness**
 
 Message:
 
@@ -986,7 +986,7 @@ Show the thesis:
 Show:
 
 ```text
-ChatGPT → WebMCP → MCP Harness → Machine
+ChatGPT → WebMCP → Olympus MCP Harness → Machine
 ```
 
 ### 0:45–1:45 — Happy Path
@@ -1021,7 +1021,7 @@ Show safe rejection/recovery.
 
 ### 2:40–3:00 — Closing Thesis
 
-> **The model reasons. The machine executes. MCP Harness engineers the boundary between them.**
+> **The model reasons. The machine executes. Olympus MCP Harness engineers the boundary between them.**
 
 ---
 
@@ -1168,7 +1168,7 @@ The project should remain focused on one idea:
 
 > **The model reasons. The machine executes.**
 
-> **WebMCP defines the boundary. MCP Harness engineers the execution behind it.**
+> **WebMCP defines the boundary. Olympus MCP Harness engineers the execution behind it.**
 
 ---
 

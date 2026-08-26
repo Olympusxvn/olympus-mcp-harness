@@ -1,7 +1,7 @@
-# MCP Harness
+# Olympus MCP Harness
 
 ## Idea
-MCP Harness is a WebMCP-native execution control layer. ChatGPT (or another in-browser agent) reasons about a shopping goal; the page exposes five structured tools; the harness validates, authorizes, executes, and verifies every call — and stops the human at checkout. Tagline: **The model reasons. The machine executes.**
+Olympus MCP Harness is a WebMCP-native execution control layer. ChatGPT (or another in-browser agent) reasons about a shopping goal; the page exposes five structured tools; the harness validates, authorizes, executes, and verifies every call — and stops the human at checkout. Tagline: **The model reasons. The machine executes.**
 
 ## Who It's For
 Two users share one live page:
@@ -20,7 +20,7 @@ Unmet need: WebMCP makes sites callable, but callable is not the same as safe. A
 - React helper (optional, not required): [use-webmcp-tool](https://github.com/GoogleChromeLabs/use-webmcp-tool).
 - Commerce demos to steal structure from, not clone: [Vercel storefront WebMCP](https://webmcp.devpost.com/resources), Cloudflare coffee-store, Chrome travel / zaMaker demos.
 - Testing: Chrome Model Context Tool Inspector extension; ChatGPT in-app browser.
-- Visual: `luxury-wc-ui` skill — obsidian/midnight, gold `#FFD700`, champagne/platinum, frosted glass, Sora + Inter. Brand copy stays MCP Harness. **Do not** import Walrus / World Cup titles. Stage color from `PROJECT.md` §13 (blue/purple/green) is overridden: stages read as gold/champagne chips + labels (`DISCOVER` / `VALIDATE` / …), approval is gold-amber, failure is deep red (not neon).
+- Visual: `luxury-wc-ui` skill — obsidian/midnight, gold `#FFD700`, champagne/platinum, frosted glass, Sora + Inter. Brand copy stays Olympus MCP Harness. **Do not** import Walrus / World Cup titles. Stage color from `PROJECT.md` §13 (blue/purple/green) is overridden: stages read as gold/champagne chips + labels (`DISCOVER` / `VALIDATE` / …), approval is gold-amber, failure is deep red (not neon).
 
 ## Goals
 - A judge understands the thesis in 20–30 seconds without reading the README.
