@@ -1,3 +1,8 @@
+import { HarnessPanel } from "@/components/HarnessPanel";
+import { MachinePanel } from "@/components/MachinePanel";
+import { MetricsPanel } from "@/components/MetricsPanel";
+import { ModelPanel } from "@/components/ModelPanel";
+import { TraceTimeline } from "@/components/TraceTimeline";
 import { HarnessBackground } from "@/components/luxury/HarnessBackground";
 import { LuxuryNav } from "@/components/luxury/LuxuryNav";
 
@@ -17,38 +22,18 @@ export default function HomePage() {
           </p>
         </header>
 
-        <section className="luxe-glass luxe-glass-strong animate-fade-in p-6 sm:p-8">
-          <div className="flex flex-wrap gap-2">
-            <span className="luxe-chip" style={{ borderColor: "var(--model)" }}>
-              Model · reason
-            </span>
-            <span
-              className="luxe-chip"
-              style={{ borderColor: "var(--harness)" }}
-            >
-              Harness · control
-            </span>
-            <span
-              className="luxe-chip"
-              style={{ borderColor: "var(--machine)" }}
-            >
-              Machine · execute
-            </span>
-            <span
-              className="luxe-chip"
-              style={{ borderColor: "var(--approval)" }}
-            >
-              Approval
-            </span>
-            <span className="luxe-chip" style={{ borderColor: "var(--fail)" }}>
-              Failure
-            </span>
+        <div className="grid animate-fade-in gap-4 lg:grid-cols-3">
+          <ModelPanel />
+          <HarnessPanel />
+          <MachinePanel />
+        </div>
+
+        <div className="mt-4 grid animate-fade-in gap-4 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <TraceTimeline />
           </div>
-          <p className="mt-6 max-w-2xl text-sm text-muted">
-            WebMCP defines the boundary. Olympus MCP Harness engineers the execution
-            behind it.
-          </p>
-        </section>
+          <MetricsPanel />
+        </div>
       </main>
     </div>
   );

@@ -43,6 +43,6 @@
 ## /build
 
 - Mode switched to step-by-step before the first item (learner: `/build step-by-step`). PROJECT.md remains the product lock.
-- GitHub: initialized a project-local repo (home directory git at `C:/Users/Admin` is not used). Remote `https://github.com/Olympusxvn/olympus-mcp-harness` — currently **private**; Devpost requires public + visible license. MIT `LICENSE` added. Pushed `main` @ `0eb5b0c`.
+- GitHub: initialized a project-local repo (home directory git at `C:/Users/Admin` is not used). Remote `https://github.com/Olympusxvn/olympus-mcp-harness` — currently **private**; learner will make it public at submission time on the same day, not earlier. MIT `LICENSE` added. Pushed `main` @ `0eb5b0c`. Product rename pushed @ `0acf46f`.
 
 
