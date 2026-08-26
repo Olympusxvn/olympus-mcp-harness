@@ -78,13 +78,21 @@ export function ModelPanel() {
         </button>
         <button
           type="button"
-          className="btn-luxe px-3 py-1.5 text-xs"
-          disabled={busy !== null}
+          className="btn-luxe-ghost px-3 py-1.5 text-xs"
+          disabled={busy !== null && busy !== "checkout"}
           onClick={() =>
             run("cart", "add_to_cart", { productId: "atlas-15", qty: 1 })
           }
         >
           {busy === "cart" ? "…" : "Add Atlas to cart"}
+        </button>
+        <button
+          type="button"
+          className="btn-luxe px-3 py-1.5 text-xs"
+          disabled={busy !== null}
+          onClick={() => run("checkout", "checkout", {})}
+        >
+          {busy === "checkout" ? "…" : "Checkout"}
         </button>
       </div>
     </section>

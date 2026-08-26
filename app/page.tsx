@@ -1,3 +1,4 @@
+import { ApprovalDialog } from "@/components/ApprovalDialog";
 import { HarnessPanel } from "@/components/HarnessPanel";
 import { MachinePanel } from "@/components/MachinePanel";
 import { MetricsPanel } from "@/components/MetricsPanel";
@@ -11,6 +12,7 @@ export default function HomePage() {
     <div className="relative min-h-screen overflow-hidden">
       <HarnessBackground />
       <LuxuryNav active="/" brand="Olympus MCP Harness" />
+      <ApprovalDialog />
       <main className="relative z-10 mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-14">
         <header className="mb-10 animate-fade-in text-center">
           <p className="luxe-eyebrow">WebMCP Challenge</p>

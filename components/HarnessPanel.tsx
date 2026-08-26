@@ -6,6 +6,7 @@ const STAGES = [
   "discover",
   "validate",
   "authorize",
+  "approval",
   "execute",
   "verify",
 ] as const;
@@ -39,6 +40,11 @@ export function HarnessPanel() {
             className={`luxe-chip text-xs capitalize ${
               current === stage ? "luxe-chip-gold" : ""
             }`}
+            style={
+              stage === "approval" && current === "approval"
+                ? { borderColor: "var(--approval)", color: "var(--approval)" }
+                : undefined
+            }
           >
             {stage}
           </li>

@@ -42,6 +42,19 @@ export interface HarnessResult<T = unknown> {
   durationMs: number;
 }
 
+export interface ApprovalLine {
+  productId: string;
+  name: string;
+  qty: number;
+  unitPrice: number;
+}
+
+export interface ApprovalBinding {
+  argsCanonical: string;
+  amount: number;
+  lines: ApprovalLine[];
+}
+
 export interface HarnessTool<I = unknown, O = unknown> {
   name: string;
   description: string;
@@ -50,6 +63,9 @@ export interface HarnessTool<I = unknown, O = unknown> {
   inputSchema: unknown;
   execute(input: I, context: HarnessContext): Promise<O>;
   verify?(output: O, context: HarnessContext): Promise<VerificationResult>;
+  bindApproval?(
+    input: I,
+  ): { ok: true; binding: ApprovalBinding } | { ok: false; error: HarnessError };
 }
 
 export interface TraceEvent {

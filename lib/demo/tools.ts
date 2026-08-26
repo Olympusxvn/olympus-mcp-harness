@@ -1,4 +1,5 @@
-import { addToCart } from "./cart";
+import { addToCart, getCart } from "./cart";
+import { bindCheckout, createSimulatedOrder } from "./checkout";
 import {
   compareProducts,
   getProductById,
@@ -62,13 +63,35 @@ export function createDemoTools(): HarnessTool[] {
         return addToCart(productId, qty);
       },
     },
+    {
+      name: "checkout",
+      description: "Checkout the current cart. Simulated — no real charge.",
+      risk: getPolicy("checkout").risk,
+      requiresApproval: getPolicy("checkout").requiresApproval,
+      inputSchema: TOOL_INPUT_SCHEMAS.checkout,
+      bindApproval() {
+        return bindCheckout();
+      },
+      async execute(_input, context) {
+        const cart = getCart();
+        const approvedAmount = context.metadata?.approvedAmount;
+        if (cart.lines.length === 0) {
+          throw new Error("Cart is empty");
+        }
+        if (
+          typeof approvedAmount === "number" &&
+          cart.total !== approvedAmount
+        ) {
+          throw new Error("Cart total no longer matches the approved amount");
+        }
+        return createSimulatedOrder(cart.total);
+      },
+    },
   ];
 }
 
 export function registerDemoTools(target: ToolRegistry = registry): void {
   for (const tool of createDemoTools()) {
-    if (!target.get(tool.name)) {
-      target.register(tool);
-    }
+    target.register(tool);
   }
 }

@@ -1,3 +1,5 @@
+import { approvals } from "@/lib/harness/approval";
+
 import { getProductById } from "./products";
 
 export type CartLine = {
@@ -36,9 +38,14 @@ export function addToCart(productId: string, qty: number): CartSnapshot {
       unitPrice: product.price,
     });
   }
+  approvals.invalidate();
   return getCart();
 }
 
 export function resetCart(): void {
+  const hadItems = lines.length > 0;
   lines.length = 0;
+  if (hadItems) {
+    approvals.invalidate();
+  }
 }

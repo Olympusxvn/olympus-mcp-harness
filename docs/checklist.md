@@ -43,7 +43,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Acceptance: From the UI, search under $1500, open one product, compare two, add to cart; totals update; traces append.
   Verify: Click simulate search → cards filter; add to cart → line items + total change.
 
-- [ ] **6. Approval-gated checkout**
+- [x] **6. Approval-gated checkout**
   Spec ref: `spec.md > Harness runtime > Approval` + `prd.md > High-risk checkout & human approval`
   What to build: `approval.ts`, `ApprovalDialog`, `checkout` tool. Bind approval to canonical args + amount. Reject path. Empty cart block. Simulated receipt.
   Acceptance: Checkout opens the modal; Reject creates no order; Approve creates order id matching amount; changing cart after prompt invalidates approval.

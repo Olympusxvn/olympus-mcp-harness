@@ -1,3 +1,8 @@
+import {
+  ApprovalController,
+  approvals,
+  bindingMatches,
+} from "./approval";
 import { harnessError } from "./errors";
 import { executeWithTimeout } from "./executor";
 import { getPolicy, mayRetry } from "./policy";
@@ -21,6 +26,7 @@ export class Harness {
     private readonly registry: ToolRegistry,
     private readonly traces: TraceLog,
     private readonly timeoutMs = 4000,
+    private readonly approval: ApprovalController = approvals,
   ) {}
 
   async run(
@@ -120,21 +126,21 @@ export class Harness {
       message: "policy",
     });
 
-    if (policy.requiresApproval) {
+    if (policy.requiresApproval && !tool.bindApproval) {
       const error = harnessError(
-        "APPROVAL_REQUIRED",
-        "High-risk action requires explicit human approval",
+        "INTERNAL_ERROR",
+        "High-risk tool is missing approval binding",
         false,
         { tool: toolName },
       );
-      this.traces.append({
-        traceId,
-        stage: "authorize",
-        tool: toolName,
-        status: "warning",
-        message: error.message,
-      });
       return fail(error, "approval", error.message);
+    }
+
+    const bound = policy.requiresApproval
+      ? tool.bindApproval!(validated.value)
+      : null;
+    if (bound && !bound.ok) {
+      return fail(bound.error, "authorize", bound.error.message);
     }
 
     this.traces.append({
@@ -144,6 +150,97 @@ export class Harness {
       status: "success",
       message: `allowed / ${policy.risk} risk`,
     });
+
+    if (bound?.ok) {
+
+      this.traces.append({
+        traceId,
+        stage: "approval",
+        tool: toolName,
+        status: "start",
+        message: `waiting for human · ${bound.binding.amount}`,
+        metadata: { amount: bound.binding.amount },
+      });
+
+      const decision = await this.approval.request(
+        {
+          traceId,
+          tool: toolName,
+          argsCanonical: bound.binding.argsCanonical,
+          amount: bound.binding.amount,
+          lines: bound.binding.lines,
+        },
+        () => {
+          const current = tool.bindApproval?.(validated.value);
+          return Boolean(
+            current?.ok && bindingMatches(bound.binding, current.binding),
+          );
+        },
+      );
+
+      if (decision === "rejected") {
+        const error = harnessError(
+          "APPROVAL_REJECTED",
+          "Human rejected the high-risk action",
+          false,
+          { tool: toolName, amount: bound.binding.amount },
+        );
+        this.traces.append({
+          traceId,
+          stage: "approval",
+          tool: toolName,
+          status: "error",
+          message: "rejected",
+        });
+        return fail(error, "approval", error.message);
+      }
+
+      if (decision === "invalidated") {
+        const error = harnessError(
+          "APPROVAL_REQUIRED",
+          "Cart changed; previous approval is invalid",
+          false,
+          { tool: toolName },
+        );
+        this.traces.append({
+          traceId,
+          stage: "approval",
+          tool: toolName,
+          status: "warning",
+          message: error.message,
+        });
+        return fail(error, "approval", error.message);
+      }
+
+      const rebound = tool.bindApproval(validated.value);
+      if (
+        !rebound.ok ||
+        !bindingMatches(bound.binding, rebound.binding)
+      ) {
+        const error = harnessError(
+          "APPROVAL_REQUIRED",
+          "Cart changed; previous approval is invalid",
+          false,
+          { tool: toolName },
+        );
+        return fail(error, "approval", error.message);
+      }
+
+      context.metadata = {
+        ...context.metadata,
+        approvedAmount: bound.binding.amount,
+        argsCanonical: bound.binding.argsCanonical,
+      };
+
+      this.traces.append({
+        traceId,
+        stage: "approval",
+        tool: toolName,
+        status: "success",
+        message: "approved",
+        metadata: { amount: bound.binding.amount },
+      });
+    }
 
     const attempt = async () =>
       executeWithTimeout(

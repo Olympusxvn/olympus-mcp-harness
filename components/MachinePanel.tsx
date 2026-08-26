@@ -17,7 +17,7 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export function MachinePanel() {
-  const { catalog, compared, selected, cart } = useDemoState();
+  const { catalog, compared, selected, cart, lastOrder } = useDemoState();
 
   return (
     <section
@@ -67,6 +67,17 @@ export function MachinePanel() {
           <li className="text-gold-soft">Total {formatUsd(cart.total)}</li>
         </ul>
       )}
+      {lastOrder ? (
+        <>
+          <p className="mt-5 text-sm text-muted">Receipt</p>
+          <div className="luxe-glass mt-2 p-4 text-sm">
+            <p className="text-gold-soft">Simulated order</p>
+            <p className="mt-1 font-mono text-xs">{lastOrder.orderId}</p>
+            <p className="mt-2">Amount {formatUsd(lastOrder.amount)}</p>
+            <p className="mt-1 text-muted">No real charge.</p>
+          </div>
+        </>
+      ) : null}
     </section>
   );
 }
