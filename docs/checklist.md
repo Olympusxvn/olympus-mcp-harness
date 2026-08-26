@@ -54,12 +54,12 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Spec ref: `spec.md > WebMCP registration` + `spec.md > Runtime & Deployment`
   What to build: `detect.ts`, `registerTools.ts` with AbortSignal lifecycle, `readOnlyHint` annotations, execute → `harness.run`. `WebmcpStatus` banner. Fallback copy for unsupported browsers.
   Acceptance: In Chrome with flag, Inspector (or `getTools`) lists five tools. Unsupported browser still has simulate path. Duplicate-registration handled (Strict Mode).
-  Verify: Chrome 149+ flag on — tools listed. Flag off — banner says unsupported, simulate still works.
+  Verify: Chrome 151+ flag on — tools listed. Flag off — banner says unsupported, simulate still works.
 
 - [ ] **8. Trace timeline, harness stage, honest metrics**
   Spec ref: `spec.md > Harness runtime > Trace` + `prd.md > Harness pipeline & observability`
   What to build: `TraceTimeline`, live current-stage in Harness column, `MetricsPanel` folding real events.
-  Acceptance: A run shows Discover…Complete with timestamps; metrics move; no hardcoded 96% success.
+  Acceptance: A run shows Inspect…Complete with timestamps; metrics move; no hardcoded 96% success.
   Verify: Run search then a bad query; timeline shows success then `INVALID_INPUT`; counters change.
 
 - [ ] **9. Scripted failure / recovery demo**

@@ -17,7 +17,7 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Olympus MCP Harness",
   description:
-    "The model reasons. The machine executes. WebMCP execution control for The WebMCP Challenge.",
+    "The model reasons. WebMCP connects. Olympus controls. The machine executes.",
 };
 
 export default function RootLayout({

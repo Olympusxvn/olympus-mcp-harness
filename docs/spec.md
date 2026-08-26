@@ -22,7 +22,7 @@ Docs:
 
 ## Runtime & Deployment
 - **Runtime:** Browser page. Harness runs in the same JS heap as the storefront so cart, approval, and traces share state with tools.
-- **Target browsers:** ChatGPT in-app browser (WebMCP on by default); Google Chrome 149+ with `chrome://flags/#enable-webmcp-testing`.
+- **Target browsers:** ChatGPT in-app browser (WebMCP on by default); Google Chrome 151+ with `chrome://flags/#enable-webmcp-testing`.
 - **HTTPS:** required for WebMCP (secure context). Local: `next dev`. Prod: Vercel HTTPS.
 - **Env:** no secrets required for MVP. Optional later: analytics.
 - **Node:** 20+ for local/CI.
@@ -41,17 +41,18 @@ Unregister via `AbortController.abort()` on unmount (Chrome docs; as of 153 in-f
 ## Architecture Overview
 
 ```text
-USER GOAL  →  MODEL (ChatGPT / Simulate panel)
-                    ↓ decide tool + args
-WEBMCP BOUNDARY     document.modelContext.registerTool
-                    Registration → Discovery → Invocation
-                    ↓ execute() is a thin wrapper
-OLYMPUS MCP HARNESS Discover → Validate → Authorize
-                    → Approval? → Execute (timeout) → Verify → Trace
-                    ↓
-MACHINE             in-memory catalog / cart / checkout
-                    ↓
-RESULT ENVELOPE     → model + UI panels
+USER GOAL
+   ↓
+MODEL                 Reason · Plan · Decide
+   ↓
+WEBMCP BOUNDARY       registerTool · discover · invoke
+   ↓
+OLYMPUS MCP HARNESS   Inspect → Validate → Authorize
+                      → Execute → Verify → Trace
+   ↓
+MACHINE               App · APIs · DB · State
+   ↓
+STRUCTURED RESULT     → model + UI panels
 ```
 
 ```mermaid
@@ -136,7 +137,7 @@ PRD ref: `prd.md > High-risk checkout & human approval`
 `lib/harness/trace.ts` — append-only events; `traceId` shared across stages of one run.
 
 ### Runtime facade
-`lib/harness/runtime.ts` — `run(tool, input, ctx)` implements the pipeline in `PROJECT.md` §9.3. Emits discover (registry hit + risk metadata), validate, authorize, approval, execute, verify, complete.
+`lib/harness/runtime.ts` — `run(tool, input, ctx)` implements the pipeline in `PROJECT.md` §9.3. Emits inspect (resolve a WebMCP-exposed capability + risk metadata), validate, authorize, approval, execute, verify, complete. Does not rediscover the WebMCP catalog.
 
 PRD ref: `prd.md > Harness pipeline & observability`
 

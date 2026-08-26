@@ -72,7 +72,7 @@ export interface TraceEvent {
   traceId: string;
   timestamp: number;
   stage:
-    | "discover"
+    | "inspect"
     | "validate"
     | "authorize"
     | "approval"

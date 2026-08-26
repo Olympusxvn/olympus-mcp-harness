@@ -3,7 +3,7 @@
 import { useDemoState } from "@/components/useDemoState";
 
 const STAGES = [
-  "discover",
+  "inspect",
   "validate",
   "authorize",
   "approval",

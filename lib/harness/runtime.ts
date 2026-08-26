@@ -75,24 +75,24 @@ export class Harness {
 
     this.traces.append({
       traceId,
-      stage: "discover",
+      stage: "inspect",
       tool: toolName,
       status: "start",
-      message: `resolve ${toolName}`,
+      message: `inspect capability ${toolName}`,
     });
 
     const resolved = this.registry.resolve(toolName);
     if (!resolved.ok) {
-      return fail(resolved.error, "discover", resolved.error.message);
+      return fail(resolved.error, "inspect", resolved.error.message);
     }
 
     const tool = resolved.tool;
     this.traces.append({
       traceId,
-      stage: "discover",
+      stage: "inspect",
       tool: toolName,
       status: "success",
-      message: `risk ${tool.risk}`,
+      message: `resolved · risk ${tool.risk}`,
       metadata: { risk: tool.risk },
     });
 

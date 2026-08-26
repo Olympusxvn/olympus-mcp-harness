@@ -8,7 +8,7 @@ Agents can now call websites through WebMCP, but the call itself is ungoverned. 
 ### Epic: First impression & thesis
 
 - As a **judge landing on the live URL**, I want the architecture and tagline visible in the first viewport so that I understand the product before any tool runs.
-  - [ ] Header shows **Olympus MCP Harness** and **The model reasons. The machine executes.**
+  - [ ] Header shows **Olympus MCP Harness** and **The model reasons. WebMCP connects. Olympus controls. The machine executes.**
   - [ ] Three columns labeled Model / Harness / Machine are visible without scrolling on a 1280px desktop.
   - [ ] Luxury glass/gold treatment is applied (obsidian base, gold accents, frosted panels). No neon, no Walrus/World Cup branding.
   - [ ] Edge: narrow viewport stacks columns; thesis remains readable.
@@ -62,7 +62,7 @@ Agents can now call websites through WebMCP, but the call itself is ungoverned. 
 
 ### Epic: Harness pipeline & observability
 
-- As a **developer watching the demo**, I want every invocation to pass Discover → Validate → Authorize → Execute → Verify so that I can trust the control layer.
+- As a **developer watching the demo**, I want every invocation to pass Inspect → Validate → Authorize → Execute → Verify so that I can trust the control layer.
   - [ ] Trace timeline appends real events with timestamps, stage, tool, status, message, duration.
   - [ ] Structured result envelope: `ok`, `tool`, `data`/`error`, `verification`, `traceId`, `durationMs`.
   - [ ] Error codes used: `TOOL_NOT_FOUND`, `INVALID_INPUT`, `UNAUTHORIZED`, `APPROVAL_REQUIRED`, `APPROVAL_REJECTED`, `EXECUTION_TIMEOUT`, `EXECUTION_FAILED`, `VERIFICATION_FAILED`, `RATE_LIMITED`, `INTERNAL_ERROR`.

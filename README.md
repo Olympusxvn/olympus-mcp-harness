@@ -2,7 +2,7 @@
 
 # ⚡ Olympus MCP Harness
 
-### *The model reasons. The machine executes.*
+### *The model reasons. WebMCP connects. Olympus controls. The machine executes.*
 
 **WebMCP Challenge · execution control behind the agent-to-web boundary**
 
@@ -28,19 +28,20 @@
 
 <br />
 
-> **New here?** WebMCP exposes tools. This repo engineers **validate → authorize → execute → verify** — and stops the human at checkout.
+> **New here?** WebMCP discovers and connects. Olympus inspects, validates, authorizes, executes, and verifies — and stops the human at checkout.
 
 <br />
 
 ```text
-USER GOAL → MODEL (reason)
+USER GOAL → MODEL (reason · plan · decide)
                 ↓
          WEBMCP BOUNDARY
      registerTool · discover · invoke
                 ↓
       OLYMPUS MCP HARNESS
- Discover → Validate → Authorize
+ Inspect → Validate → Authorize
         → Execute → Verify
+        → Trace
                 ↓
             MACHINE
 ```
@@ -91,7 +92,7 @@ npm run dev
 ### Test WebMCP (agent path)
 
 1. **ChatGPT in-app browser** — WebMCP on by default. Open the live URL (or localhost if your client allows it). Goal: *Find the best laptop under $1,500 for AI development and prepare it for purchase.*
-2. **Google Chrome 149+** — `chrome://flags/#enable-webmcp-testing` → Enabled → relaunch. Optional: [Model Context Tool Inspector](https://developer.chrome.com/docs/ai/webmcp).
+2. **Google Chrome 151+** — `chrome://flags/#enable-webmcp-testing` → Enabled → relaunch. Optional: [Model Context Tool Inspector](https://developer.chrome.com/docs/ai/webmcp).
 3. **No WebMCP client** — use the **Simulate** controls in the Model column. Same `harness.run` path; do not treat missing `document.modelContext` as a broken app.
 
 ### What must be true
@@ -105,14 +106,14 @@ npm run dev
 
 ## 🏗️ Overview
 
-Olympus MCP Harness is the control layer **behind** the WebMCP boundary. The model decides *what* and *why*. The machine executes *how*. The harness validates arguments, classifies risk, gates irreversible actions, verifies results, and records a trace.
+Olympus MCP Harness is the control layer **behind** the WebMCP boundary. The model decides *what* and *why*. WebMCP is how the agent talks to the web. Olympus answers *can / should / did it work*. The machine does the work.
 
 | Layer | Responsibility |
 |:------|:---------------|
-| **🧠 Model** | Intent, plan, tool choice, interpret results (ChatGPT / Simulate panel) |
-| **🔌 WebMCP** | `registerTool` discovery and invocation in the page |
-| **🛡️ Harness** | Discover → Validate → Authorize → Execute → Verify + approval |
-| **🖥️ Machine** | In-memory catalog, cart, simulated checkout |
+| **🧠 Model** | WHAT / WHY — intent, plan, tool choice, interpret results |
+| **🔌 WebMCP** | HOW THE AGENT TALKS TO THE WEB — `registerTool`, discover, invoke |
+| **🛡️ Olympus** | CAN / SHOULD / DID IT WORK? — inspect, validate, authorize, execute, verify, trace |
+| **🖥️ Machine** | DO THE WORK — catalog, cart, simulated checkout |
 
 ```mermaid
 flowchart LR
@@ -247,7 +248,7 @@ Hackathon definition of done lives in [PROJECT.md](PROJECT.md) §23. Build seque
 
 **Olympus MCP Harness**
 
-*The model reasons. The machine executes.*
+*The model reasons. WebMCP connects. Olympus controls. The machine executes.*
 
 [![Star on GitHub](https://img.shields.io/github/stars/Olympusxvn/olympus-mcp-harness?style=social)](https://github.com/Olympusxvn/olympus-mcp-harness/stargazers)
 

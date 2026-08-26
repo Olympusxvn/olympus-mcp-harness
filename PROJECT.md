@@ -1,8 +1,8 @@
 # Olympus MCP Harness
 
-> **The model reasons. The machine executes.**
+> **The model reasons. WebMCP connects. Olympus controls. The machine executes.**
 >
-> Olympus MCP Harness engineers the execution boundary between AI reasoning and machine execution.
+> Olympus MCP Harness engineers the execution control layer behind the WebMCP boundary.
 
 ---
 
@@ -19,8 +19,9 @@ The project is built for **The WebMCP Challenge** and is designed to demonstrate
 > **Models are probabilistic. Execution shouldn't be.**
 
 The model should decide **what** to do and **why**.
-The machine should deterministically execute **how** it gets done.
-The harness is the control layer between them.
+WebMCP is how the agent talks to the web.
+Olympus decides **can / should / did it work**.
+The machine deterministically **does the work**.
 
 ---
 
@@ -47,32 +48,34 @@ The missing layer is an **execution harness** that makes agent-to-web actions co
 
 ## 3. Solution
 
-Olympus MCP Harness introduces five execution primitives:
+Olympus MCP Harness introduces five execution primitives. These run **after** WebMCP has already registered, discovered, and invoked a tool — they do not replace WebMCP discovery.
 
-1. **DISCOVER** — understand and enrich the WebMCP capabilities available to the agent.
+1. **INSPECT** — resolve and enrich a capability WebMCP already exposed (risk, policy metadata, filters). Do not rediscover the catalog.
 2. **VALIDATE** — validate tool arguments, types, schemas, constraints, and normalized values.
 3. **AUTHORIZE** — enforce permissions, risk policies, rate limits, and human approval rules.
-4. **EXECUTE** — invoke the selected WebMCP-backed action through a controlled runtime.
+4. **EXECUTE** — invoke the selected machine action through a controlled runtime.
 5. **VERIFY** — validate the result, detect failures, confirm expected state changes, and return structured context.
 
-A cross-cutting observability layer records every step.
+A cross-cutting **trace** records every step.
 
 ```text
 USER GOAL
    ↓
 MODEL
-Understand → Reason → Plan → Decide
+Reason · Plan · Decide
    ↓
 WEBMCP BOUNDARY
-Registration → Discovery → Invocation → Execution → Response
+registerTool · discover · invoke
    ↓
 OLYMPUS MCP HARNESS
-Discover → Validate → Authorize → Execute → Verify
+Inspect → Validate → Authorize
+        → Execute → Verify
+        → Trace
    ↓
 MACHINE
-Application Logic → APIs → Data → External Systems
+App Logic · APIs · Database · State
    ↓
-RESULT + CONTEXT
+STRUCTURED RESULT
    └────────────────────────→ MODEL
 ```
 
@@ -237,7 +240,7 @@ The UI must show the execution lifecycle in real time.
 Example:
 
 ```text
-12:01:03  DISCOVER    search_products available
+12:01:03  INSPECT     search_products resolved · risk low
 12:01:03  VALIDATE    input OK
 12:01:04  AUTHORIZE   allowed / low risk
 12:01:04  EXECUTE     search_products()
@@ -328,17 +331,18 @@ Business execution policy belongs inside the harness.
 
 ### Discovery Rule
 
-Do not reimplement WebMCP discovery.
+WebMCP owns discovery. Olympus does not rediscover.
 
-The harness may:
+The harness **inspects** capabilities already exposed by `registerTool`:
 
+- resolve the named tool against the local registry,
 - enrich tool metadata,
 - classify tools by risk,
 - filter capabilities based on policy,
 - attach constraints,
 - attach approval requirements.
 
-It should not pretend to replace the WebMCP lifecycle.
+It should not pretend to replace the WebMCP lifecycle (`registerTool · discover · invoke`).
 
 ---
 
@@ -375,9 +379,9 @@ interface HarnessContext {
 ### 9.3 Execution Pipeline
 
 ```text
-receive invocation
+receive invocation (WebMCP execute or Simulate)
       ↓
-resolve tool
+inspect capability (resolve + risk; do not rediscover)
       ↓
 validate schema
       ↓
@@ -499,7 +503,7 @@ interface TraceEvent {
   traceId: string;
   timestamp: number;
   stage:
-    | "discover"
+    | "inspect"
     | "validate"
     | "authorize"
     | "approval"
@@ -541,15 +545,17 @@ The UI should make the philosophy understandable without reading documentation.
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │ OLYMPUS MCP HARNESS                                     │
-│ The model reasons. The machine executes.                │
+│ The model reasons. WebMCP connects.                     │
+│ Olympus controls. The machine executes.                 │
 ├──────────────┬──────────────────────┬────────────────────┤
 │ MODEL        │ HARNESS              │ MACHINE            │
+│ WHAT / WHY   │ CAN / SHOULD / DID   │ DO THE WORK        │
 │              │                      │                    │
-│ Intent       │ Discover             │ WebMCP tools       │
-│ Reasoning    │ Validate             │ App state          │
-│ Decision     │ Authorize            │ API result         │
-│ Next step    │ Execute              │ External system    │
-│              │ Verify               │                    │
+│ Intent       │ Inspect              │ App logic          │
+│ Reasoning    │ Validate             │ APIs · State       │
+│ Decision     │ Authorize            │ Simulated checkout │
+│ Next step    │ Execute              │                    │
+│              │ Verify · Trace       │                    │
 ├──────────────┴──────────────────────┴────────────────────┤
 │ EXECUTION TRACE                                         │
 └─────────────────────────────────────────────────────────┘
@@ -895,7 +901,7 @@ Do not require a real credit-card purchase for judging.
 
 ### Primary Tagline
 
-> **The model reasons. The machine executes.**
+> **The model reasons. WebMCP connects. Olympus controls. The machine executes.**
 
 ### Product Thesis
 
@@ -946,7 +952,7 @@ Role:
 
 Message:
 
-> WebMCP exposes structured capabilities.
+> WebMCP connects: registerTool, discover, invoke.
 
 ### Vercel
 
@@ -1021,7 +1027,7 @@ Show safe rejection/recovery.
 
 ### 2:40–3:00 — Closing Thesis
 
-> **The model reasons. The machine executes. Olympus MCP Harness engineers the boundary between them.**
+> **The model reasons. WebMCP connects. Olympus controls. The machine executes.**
 
 ---
 
@@ -1166,9 +1172,9 @@ If no, defer it.
 
 The project should remain focused on one idea:
 
-> **The model reasons. The machine executes.**
+> **The model reasons. WebMCP connects. Olympus controls. The machine executes.**
 
-> **WebMCP defines the boundary. Olympus MCP Harness engineers the execution behind it.**
+> **WebMCP discovers. Olympus inspects. The machine executes.**
 
 ---
 

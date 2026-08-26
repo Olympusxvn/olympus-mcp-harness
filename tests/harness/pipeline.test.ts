@@ -53,7 +53,7 @@ describe("harness.run pipeline", () => {
     const events = traces.forTrace(result.traceId);
     expect(events.map((event) => event.stage)).toEqual(
       expect.arrayContaining([
-        "discover",
+        "inspect",
         "validate",
         "authorize",
         "execute",

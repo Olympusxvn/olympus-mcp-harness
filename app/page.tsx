@@ -4,6 +4,7 @@ import { MachinePanel } from "@/components/MachinePanel";
 import { MetricsPanel } from "@/components/MetricsPanel";
 import { ModelPanel } from "@/components/ModelPanel";
 import { TraceTimeline } from "@/components/TraceTimeline";
+import { WebmcpStatus } from "@/components/WebmcpStatus";
 import { HarnessBackground } from "@/components/luxury/HarnessBackground";
 import { LuxuryNav } from "@/components/luxury/LuxuryNav";
 
@@ -20,8 +21,11 @@ export default function HomePage() {
             Olympus MCP <span className="luxe-gold-text">Harness</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-muted">
-            The model reasons. The machine executes.
+            The model reasons. WebMCP connects.
+            <br className="hidden sm:block" /> Olympus controls. The machine
+            executes.
           </p>
+          <WebmcpStatus />
         </header>
 
         <div className="grid animate-fade-in gap-4 lg:grid-cols-3">
