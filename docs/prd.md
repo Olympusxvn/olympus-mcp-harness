@@ -69,13 +69,13 @@ Agents can now call websites through WebMCP, but the call itself is ungoverned. 
   - [ ] Metrics (success rate, avg latency, tool calls, approvals, rejects, validation failures, verification failures) come from the same in-memory log — not placeholders.
 
 - As a **judge**, I want one visible failure handled safely so that Execution is not only the happy path.
-  - [ ] A demo control or agent-callable bad input shows `INVALID_INPUT` (or timeout / verification fail) with a red/error chip and no silent retry on high-risk tools.
-  - [ ] Low-risk search may retry once on timeout; checkout never auto-retries.
+  - [x] A demo control or agent-callable bad input shows `INVALID_INPUT` (or timeout / verification fail) with a red/error chip and no silent retry on high-risk tools.
+  - [x] Low-risk search may retry once on timeout; checkout never auto-retries.
 
 ### Epic: Submission surfaces
 
 - As a **contestant**, I want README + live URL + repo license so that judges can test without a call.
-  - [ ] README: thesis, tool list, Chrome flag steps, ChatGPT in-app browser note, simulate-agent fallback, “no real payments”.
+  - [x] README: thesis, tool list, Chrome flag steps, ChatGPT in-app browser note, simulate-agent fallback, “no real payments”.
   - [ ] Public repo, visible open-source license, English Devpost description drafted from this PRD.
 
 ## What We're Building

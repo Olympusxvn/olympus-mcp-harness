@@ -207,17 +207,28 @@ olympus-mcp-harness/
 │   │   ├── executor.ts
 │   │   ├── verifier.ts
 │   │   ├── trace.ts
+│   │   ├── metrics.ts
 │   │   └── runtime.ts
 │   └── demo/
 │       ├── products.ts
 │       ├── cart.ts
-│       └── checkout.ts
+│       ├── checkout.ts
+│       ├── faults.ts
+│       ├── session.ts
+│       └── tools.ts
 ├── tests/
+│   ├── demo/
+│   │   └── machine.test.ts
+│   ├── webmcp/
+│   │   └── register.test.ts
 │   └── harness/
 │       ├── validator.test.ts
 │       ├── policy.test.ts
 │       ├── approval.test.ts
-│       └── pipeline.test.ts
+│       ├── pipeline.test.ts
+│       ├── metrics.test.ts
+│       ├── recovery.test.ts
+│       └── verifier.test.ts
 ├── docs/                   # hackathon artifacts
 ├── public/                 # background asset if needed
 ├── PROJECT.md

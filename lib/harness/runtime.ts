@@ -212,9 +212,9 @@ export class Harness {
         return fail(error, "approval", error.message);
       }
 
-      const rebound = tool.bindApproval(validated.value);
+      const rebound = tool.bindApproval?.(validated.value);
       if (
-        !rebound.ok ||
+        !rebound?.ok ||
         !bindingMatches(bound.binding, rebound.binding)
       ) {
         const error = harnessError(

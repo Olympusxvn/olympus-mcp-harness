@@ -69,7 +69,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Verify: Click failure control — error in trace, cart unchanged, checkout still gated.
   **Checkpoint:** Happy path + approval + failure all demoable.
 
-- [ ] **10. Harness tests and README**
+- [x] **10. Harness tests and README**
   Spec ref: `spec.md > File Structure` + `prd.md > Submission surfaces`
   What to build: Remaining tests (approval reject, verification fail, high-risk no retry). README: thesis, tools, Chrome flag, ChatGPT in-app browser, simulate fallback, no real payments, license. MIT `LICENSE`.
   Acceptance: `vitest` green; clone instructions work from README.

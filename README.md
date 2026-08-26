@@ -58,6 +58,7 @@ USER GOAL → MODEL (reason · plan · decide)
 | 🏗️ | [Overview](#-overview) |
 | 🔌 | [WebMCP tools](#-webmcp-tools) |
 | ⚡ | [Quick start](#-quick-start) |
+| 🧪 | [Testing](#-testing) |
 | 📚 | [Documentation](#-documentation) |
 | ✅ | [Checklist](#-checklist) |
 | 🔒 | [Security](#-security) |
@@ -78,6 +79,8 @@ Repo stays **private until submission day**, then public for judging.
 git clone https://github.com/Olympusxvn/olympus-mcp-harness.git
 cd olympus-mcp-harness
 npm install
+npm test
+npm run build
 npm run dev
 # open http://localhost:3000
 ```
@@ -101,6 +104,7 @@ npm run dev
 - Checkout pauses on **HUMAN APPROVAL REQUIRED**. **Reject** = no order.
 - Trace events are real. Metrics are not hardcoded.
 - Purchases are **simulated** — no card, no Stripe.
+- Safe failure is one click: **Invalid search** (`INVALID_INPUT`) and **Timeout then recover** (low-risk retry once). Cart stays put. Checkout still never auto-retries.
 
 ---
 
@@ -164,6 +168,8 @@ Demo goal: *Find the best laptop under $1,500 for AI development and prepare it 
 
 ```bash
 npm install
+npm test
+npm run build
 npm run dev
 ```
 
@@ -186,6 +192,18 @@ Set **Enabled**, relaunch Chrome.
 | `npm run start` | Serve production build |
 | `npm run lint` | ESLint |
 | `npm test` | Vitest harness tests |
+
+---
+
+## 🧪 Testing
+
+Clone-from-zero verify (same as the checklist):
+
+```bash
+npm i && npm test && npm run build
+```
+
+Coverage includes invalid search, approval reject, verification fail, low-risk timeout retry, and **no auto-retry on checkout**.
 
 ---
 
@@ -224,10 +242,10 @@ Set **Enabled**, relaunch Chrome.
 Hackathon definition of done lives in [PROJECT.md](PROJECT.md) §23. Build sequence: [docs/checklist.md](docs/checklist.md).
 
 - [x] Public-ready MIT license in repo
-- [ ] Five WebMCP tools on the live page
-- [ ] Checkout approval bound to exact arguments
-- [ ] Trace + honest metrics
-- [ ] One safe failure path
+- [x] Checkout approval bound to exact arguments
+- [x] Trace + honest metrics
+- [x] One safe failure path
+- [ ] Five WebMCP tools on the **live** page (Vercel — step 11)
 - [ ] Vercel live URL
 - [ ] Demo video &lt; 3 minutes
 - [ ] Repo **public** at submit (kept private until then)
