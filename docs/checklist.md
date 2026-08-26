@@ -24,7 +24,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Acceptance: Catalog visible in Machine column; layout readable at 1280px; stacked on small screens.
   Verify: Load `/` and confirm three labeled columns and product cards with numeric prices.
 
-- [ ] **3. Harness types, registry, validator, policy (no UI wiring yet)**
+- [x] **3. Harness types, registry, validator, policy (no UI wiring yet)**
   Spec ref: `spec.md > Harness runtime > Types` through `Policy`
   What to build: `types.ts`, `errors.ts`, `registry.ts`, `validator.ts` (Zod aligned to JSON Schema), `policy.ts` table. Unit tests for invalid schema and unknown tool.
   Acceptance: Tests prove `INVALID_INPUT` and `TOOL_NOT_FOUND`. Policy matches PRD table.
