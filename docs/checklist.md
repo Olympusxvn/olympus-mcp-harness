@@ -31,7 +31,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Verify: `npx vitest run` — validator/policy tests pass.
   **Checkpoint:** Learner confirms error codes and policy table look right.
 
-- [ ] **4. Executor, verifier, trace, runtime pipeline**
+- [x] **4. Executor, verifier, trace, runtime pipeline**
   Spec ref: `spec.md > Harness runtime > Executor` through `Runtime facade`
   What to build: timeout wrapper, per-tool verifiers, append-only trace, `harness.run` pipeline. Integration test: valid search → success envelope with `traceId`.
   Acceptance: One successful `search_products` through the pipeline returns `ok: true` and verification checks.

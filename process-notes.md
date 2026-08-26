@@ -45,4 +45,10 @@
 - Mode switched to step-by-step before the first item (learner: `/build step-by-step`). PROJECT.md remains the product lock.
 - GitHub: initialized a project-local repo (home directory git at `C:/Users/Admin` is not used). Remote `https://github.com/Olympusxvn/olympus-mcp-harness` — currently **private**; learner will make it public at submission time on the same day, not earlier. MIT `LICENSE` added. Pushed `main` @ `0eb5b0c`. Product rename pushed @ `0acf46f`.
 
+### Step 4: Executor, verifier, trace, runtime pipeline
+
+- Built `executor.ts` (4s timeout), `verifier.ts` (per-tool checks), `trace.ts`, `runtime.ts` `harness.run` (discover → validate → authorize → execute → verify). Checkout short-circuits with `APPROVAL_REQUIRED` until step 6. Low-risk tools retry once on timeout.
+- Verification: `npm test` — 16 passed, including valid `search_products` envelope with `traceId`.
+- Not committed (learner did not ask this turn).
+
 
