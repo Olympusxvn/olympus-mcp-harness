@@ -184,6 +184,7 @@ Set **Enabled**, relaunch Chrome.
 | `npm run build` | Production build |
 | `npm run start` | Serve production build |
 | `npm run lint` | ESLint |
+| `npm test` | Vitest harness tests |
 
 ---
 

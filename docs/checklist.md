@@ -12,13 +12,13 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
 
 ## Checklist
 
-- [ ] **1. Scaffold Next.js app and luxury design system**
+- [x] **1. Scaffold Next.js app and luxury design system**
   Spec ref: `spec.md > Stack` + `spec.md > Luxury shell > Tokens and utilities`
   What to build: `create-next-app` (App Router, TS, Tailwind) in the repo root without wiping `PROJECT.md` / `docs/`. Add CSS variables, `.luxe-*` utilities, Sora + Inter, `LuxuryNav`, `HarnessBackground`. Brand: Olympus MCP Harness. No Walrus/World Cup strings. `webmcp-types` in tsconfig.
   Acceptance: Home page renders obsidian/gold glass chrome and the tagline. Reduced-motion CSS present.
   Verify: `npm run dev` — first viewport matches luxury skill; no neon.
 
-- [ ] **2. Three-column demo shell and seeded catalog**
+- [x] **2. Three-column demo shell and seeded catalog**
   Spec ref: `spec.md > Luxury shell > Layout components` + `spec.md > Demo machine > Catalog`
   What to build: Model / Harness / Machine columns; `products.ts` with 8–12 laptops including sub-$1500 AI-dev options; empty cart and placeholder trace/metrics panels.
   Acceptance: Catalog visible in Machine column; layout readable at 1280px; stacked on small screens.
