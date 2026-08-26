@@ -11,6 +11,7 @@ const STAGES = [
   "authorize",
   "approval",
   "execute",
+  "recover",
   "verify",
 ] as const;
 
@@ -65,6 +66,9 @@ function chipStyle(
 ): CSSProperties | undefined {
   if (errorStage === stage) {
     return { borderColor: "var(--fail)", color: "var(--fail)" };
+  }
+  if (stage === "recover" && (active === "recover" || seen.has("recover"))) {
+    return { borderColor: "var(--approval)", color: "var(--approval)" };
   }
   if (stage === "approval" && active === "approval") {
     return { borderColor: "var(--approval)", color: "var(--approval)" };

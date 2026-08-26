@@ -32,7 +32,7 @@ export class Harness {
   async run(
     toolName: string,
     input: unknown,
-    options?: { sessionId?: string; signal?: AbortSignal },
+    options?: { sessionId?: string; signal?: AbortSignal; timeoutMs?: number },
   ): Promise<HarnessResult> {
     const startedAt = Date.now();
     const traceId = createTraceId();
@@ -242,12 +242,14 @@ export class Harness {
       });
     }
 
+    const budget = options?.timeoutMs ?? this.timeoutMs;
+
     const attempt = async () =>
       executeWithTimeout(
         tool,
         validated.value,
         context,
-        this.timeoutMs,
+        budget,
         options?.signal,
       );
 

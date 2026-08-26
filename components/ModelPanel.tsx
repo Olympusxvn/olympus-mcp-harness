@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { useDemoState, useSimulate } from "@/components/useDemoState";
+import { armSearchDelayOnce } from "@/lib/demo/faults";
 
 const DEMO_GOAL =
   "Find the best laptop under $1,500 for AI development and prepare it for purchase.";
@@ -12,10 +13,15 @@ export function ModelPanel() {
   const simulate = useSimulate();
   const [busy, setBusy] = useState<string | null>(null);
 
-  async function run(label: string, tool: string, input: unknown) {
+  async function run(
+    label: string,
+    tool: string,
+    input: unknown,
+    options?: { timeoutMs?: number },
+  ) {
     setBusy(label);
     try {
-      await simulate(tool, input);
+      await simulate(tool, input, options);
     } finally {
       setBusy(null);
     }
@@ -43,8 +49,13 @@ export function ModelPanel() {
       ) : null}
       {lastResult && !lastResult.ok ? (
         <p
-          className="luxe-chip mt-2 w-fit text-xs"
-          style={{ borderColor: "var(--fail)", color: "var(--fail)" }}
+          className="luxe-chip mt-2 w-fit text-sm font-medium"
+          role="alert"
+          style={{
+            borderColor: "var(--fail)",
+            color: "var(--fail)",
+            background: "rgba(201, 74, 74, 0.12)",
+          }}
         >
           {lastResult.error?.code}
         </p>
@@ -109,6 +120,22 @@ export function ModelPanel() {
           onClick={() => run("invalid", "search_products", { query: "   " })}
         >
           {busy === "invalid" ? "…" : "Invalid search"}
+        </button>
+        <button
+          type="button"
+          className="btn-luxe-ghost px-3 py-1.5 text-xs"
+          disabled={busy !== null}
+          onClick={() => {
+            armSearchDelayOnce(700);
+            void run(
+              "timeout",
+              "search_products",
+              { query: "laptop for AI development", maxPrice: 1500 },
+              { timeoutMs: 200 },
+            );
+          }}
+        >
+          {busy === "timeout" ? "…" : "Timeout then recover"}
         </button>
       </div>
     </section>

@@ -11,6 +11,8 @@ import { harness } from "@/lib/harness/runtime";
 import { traces } from "@/lib/harness/trace";
 import type { HarnessResult } from "@/lib/harness/types";
 
+type SimulateOptions = { timeoutMs?: number; signal?: AbortSignal };
+
 export function useDemoState() {
   useSyncExternalStore(subscribeDemo, getDemoVersion, getDemoVersion);
   useSyncExternalStore(approvals.subscribe, approvals.getVersion, approvals.getVersion);
@@ -32,8 +34,12 @@ export function useSimulate() {
     registerDemoTools();
   }, []);
 
-  return useCallback(async (tool: string, input: unknown): Promise<HarnessResult> => {
-    const result = await harness.run(tool, input);
+  return useCallback(async (
+    tool: string,
+    input: unknown,
+    options?: SimulateOptions,
+  ): Promise<HarnessResult> => {
+    const result = await harness.run(tool, input, options);
     applyHarnessResult(result);
     return result;
   }, []);

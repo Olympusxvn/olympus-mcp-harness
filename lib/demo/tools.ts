@@ -1,5 +1,6 @@
 import { addToCart, getCart } from "./cart";
 import { bindCheckout, createSimulatedOrder } from "./checkout";
+import { consumeInjectedDelay } from "./faults";
 import {
   compareProducts,
   getProductById,
@@ -23,6 +24,7 @@ export function createDemoTools(): HarnessTool[] {
           query: string;
           maxPrice?: number;
         };
+        await consumeInjectedDelay();
         return searchProducts(query, maxPrice);
       },
     },

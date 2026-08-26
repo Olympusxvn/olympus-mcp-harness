@@ -62,7 +62,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Acceptance: A run shows Inspect…Complete with timestamps; metrics move; no hardcoded 96% success.
   Verify: Run search then a bad query; timeline shows success then `INVALID_INPUT`; counters change.
 
-- [ ] **9. Scripted failure / recovery demo**
+- [x] **9. Scripted failure / recovery demo**
   Spec ref: `spec.md > Harness runtime > Executor` + `prd.md` failure story
   What to build: UI control “Trigger invalid search” and/or timeout injection on a low-risk tool (retry once). Checkout still never auto-retries. High-contrast error chip.
   Acceptance: Judge can provoke one safe failure without opening DevTools.
