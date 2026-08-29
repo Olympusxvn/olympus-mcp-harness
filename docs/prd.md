@@ -1,7 +1,7 @@
 # Olympus MCP Harness — Product Requirements
 
 ## Problem Statement
-Agents can now call websites through WebMCP, but the call itself is ungoverned. A shopper (or a judge acting as one) can watch an agent search laptops, dump junk into a cart, and fire checkout with bad prices or no consent. Developers exposing tools have no shared place to validate arguments, classify risk, require a human, verify the world actually changed, or show a trace. That gap is frequent (every multi-step agent session) and costly (wrong purchase, silent failure, unreproducible demo). Olympus MCP Harness is the control layer behind the WebMCP boundary for one coherent commerce demo — not a new agent.
+WebMCP makes actions available to models. Olympus makes those actions safe to execute. As WebMCP moves agents from reading websites to acting on them, execution becomes a trust boundary — and developers exposing real actions to AI agents through WebMCP have no shared place to validate arguments, classify risk, require a human, verify the world actually changed, or show a trace. A shopper (or a judge acting as one) can still watch an agent search laptops, dump junk into a cart, and fire checkout with bad prices or no consent. That gap is frequent (every multi-step agent session) and costly (wrong purchase, silent failure, unreproducible demo). Olympus MCP Harness is the control layer behind the WebMCP boundary; the commerce UI is a demo machine, not the product.
 
 ## User Stories
 

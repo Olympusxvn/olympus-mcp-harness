@@ -4,12 +4,12 @@
 Olympus MCP Harness is a WebMCP-native execution control layer. ChatGPT (or another in-browser agent) reasons about a shopping goal; WebMCP registers, discovers, and invokes five structured tools; Olympus inspects, validates, authorizes, executes, and verifies every call — and stops the human at checkout. Tagline: **The model reasons. WebMCP connects. Olympus controls. The machine executes.**
 
 ## Who It's For
-Two users share one live page:
+**Developers exposing real actions to AI agents through WebMCP.** The live demo also has two seats on one page:
 
 - **Human shopper / judge** — sees a luxury storefront, the current model decision, harness stage, machine action, and a non-skippable approval gate on purchase.
 - **In-page agent** (ChatGPT in-app browser, or Chrome 151+ with WebMCP testing enabled) — must use `document.modelContext` tools instead of scraping the DOM, because the harness is the only path to cart and checkout.
 
-Unmet need: WebMCP makes sites callable, but callable is not the same as safe. Agents still pass bad args, skip policy, and fire irreversible actions. This project exists to prove that the missing layer is an execution harness, not another agent.
+Unmet need: WebMCP makes actions available to models. Olympus makes those actions safe to execute. Callable is not the same as safe. As WebMCP moves agents from reading websites to acting on them, execution becomes a trust boundary. Olympus engineers that boundary.
 
 ## Inspiration & References
 - Strategy lock: root `PROJECT.md` + architecture/roadmap images in the repo.

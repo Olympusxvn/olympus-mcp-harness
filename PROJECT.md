@@ -8,7 +8,7 @@
 
 ## 1. Project Overview
 
-**Olympus MCP Harness** is a WebMCP-native execution harness for AI agents.
+**Olympus MCP Harness** is a WebMCP-native execution harness for developers exposing real actions to AI agents through WebMCP.
 
 It sits behind the WebMCP boundary and turns model decisions into **controlled, observable, policy-aware, verifiable execution**.
 
@@ -27,9 +27,9 @@ The machine deterministically **does the work**.
 
 ## 2. Problem
 
-WebMCP makes websites legible and actionable to AI agents by exposing structured tools and capabilities.
+WebMCP makes actions available to models. Olympus makes those actions safe to execute.
 
-However, exposing tools alone does not guarantee reliable execution.
+WebMCP makes websites legible and actionable by exposing structured tools and capabilities. Exposing tools alone does not guarantee reliable execution.
 
 An agent can still:
 
@@ -43,6 +43,8 @@ An agent can still:
 - become difficult to debug because the action path is opaque.
 
 The missing layer is an **execution harness** that makes agent-to-web actions controlled, observable, safe, and verifiable.
+
+As WebMCP moves agents from reading websites to acting on them, execution becomes a trust boundary. Olympus engineers that boundary.
 
 ---
 
@@ -763,14 +765,9 @@ Show the harness catching it and recovering or failing safely.
 
 ### Phase 7 — Evals
 
-Create repeatable tests for:
+**Planned.** Repeatable tests for invalid schema, unauthorized blocking, approval, checkout after approve, verification failure, trace completeness.
 
-- invalid schema rejection,
-- unauthorized action blocking,
-- approval enforcement,
-- successful checkout after approval,
-- verification failure handling,
-- trace completeness.
+Do **not** publish a success-rate percentage until a real run exists. After a run, cite “evaluated using Chrome WebMCP Evals methodology” — not before.
 
 ### Phase 8 — Polish
 

@@ -10,7 +10,7 @@
 
 [![WebMCP Challenge](https://img.shields.io/badge/WebMCP-Challenge_2026-6E56CF?style=for-the-badge)](https://webmcp.devpost.com/)
 [![Deadline](https://img.shields.io/badge/Deadline-3_Sep_2026_1pm_PDT-111827?style=for-the-badge)](https://webmcp.devpost.com/)
-[![Status](https://img.shields.io/badge/Submission-Building-f5b942?style=for-the-badge)](docs/checklist.md)
+[![Status](https://img.shields.io/badge/Submission-Submitted-4ade80?style=for-the-badge)](https://webmcp.devpost.com/)
 
 <br />
 
@@ -29,7 +29,13 @@
 
 <br />
 
-> **New here?** WebMCP discovers and connects. Olympus inspects, validates, authorizes, executes, and verifies — and gates high-risk actions behind explicit human approval.
+> **For developers exposing real actions to AI agents through WebMCP.**
+>
+> WebMCP makes actions available to models. Olympus makes those actions safe to execute.
+>
+> As WebMCP moves agents from reading websites to acting on them, execution becomes a trust boundary. Olympus engineers that boundary.
+>
+> High-risk actions stay behind explicit human approval.
 
 <br />
 
@@ -136,6 +142,10 @@ Low- and medium-risk actions reached Olympus successfully.
 High-risk checkout was independently blocked at the client security layer.
 This is expected defense-in-depth behavior.
 
+![ChatGPT in-app browser invoking Olympus tools](output%2002.png)
+![ChatGPT WebMCP tool list](output%2003.png)
+![Olympus high-risk checkout gating](oylmpus%20hardness%2002.png)
+
 ### What must be true
 - Five tools registered via `document.modelContext.registerTool` (thin wrappers).
 - When the WebMCP client permits checkout invocation, Olympus pauses on HUMAN APPROVAL REQUIRED. In ChatGPT's in-app browser, checkout may be blocked earlier by client security.
@@ -147,7 +157,26 @@ This is expected defense-in-depth behavior.
 
 ## 🏗️ Overview
 
-Olympus MCP Harness is the control layer **behind** the WebMCP boundary. The model decides *what* and *why*. WebMCP is how the agent talks to the web. Olympus answers *can / should / did it work*. The machine does the work.
+Olympus MCP Harness is for **developers exposing real actions to AI agents through WebMCP**. It is the control layer **behind** the WebMCP boundary — not another agent.
+
+WebMCP makes actions available to models. Olympus makes those actions safe to execute.
+
+As WebMCP moves agents from reading websites to acting on them, execution becomes a trust boundary. Olympus engineers that boundary.
+
+The model decides *what* and *why*. WebMCP is how the agent talks to the web. Olympus answers *can / should / did it work*. The machine does the work.
+
+The laptop storefront is a **demo machine**. The harness API is generic: register a tool, attach policy metadata, then run it.
+
+```ts
+await harness.run("tool_name", input);
+
+getPolicy("tool_name");
+// { risk: "low" | "medium" | "high",
+//   requiresApproval: boolean,
+//   retryOnTimeout: boolean }
+```
+
+Shopping is one binding of that table (`checkout` = high + approval, no retry). Another site would register different tools against the same `harness.run`.
 
 | Layer | Responsibility |
 |:------|:---------------|
@@ -241,6 +270,8 @@ npm i && npm test && npm run build
 ```
 
 Coverage includes invalid search, approval reject, verification fail, low-risk timeout retry, and **no auto-retry on checkout**.
+
+Live metrics fold from the in-session trace (never a hardcoded percentage). Chrome WebMCP Evals methodology is **planned** — this README does not claim an eval score until a run exists.
 
 ---
 

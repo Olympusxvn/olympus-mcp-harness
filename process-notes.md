@@ -56,4 +56,14 @@
 - Learner submitted to [The WebMCP Challenge](https://webmcp.devpost.com/) (29 Aug 2026). Name stayed **Olympus MCP Harness**. Repo made public the same window: https://github.com/Olympusxvn/olympus-mcp-harness — live https://olympus-mcp-harness.vercel.app.
 - Freeze: do not edit repo / live / Devpost after 3 Sep 2026 1:00pm PDT.
 
+### Judging-copy pass (29 Aug 2026, evening)
+
+- Audience: developers exposing real actions to AI agents through WebMCP (not “a harness for AI agents”).
+- Problem line: WebMCP makes actions available to models. Olympus makes those actions safe to execute.
+- Trust-boundary sentence added to README + `docs/devpost.md`.
+- Reusable layer shown as `harness.run` + policy metadata; shopping remains a demo binding.
+- Chrome WebMCP Evals kept **planned**; no published %.
+- Pulled learner commits `e02caae` (high-risk gating) and `50d7658` (native ChatGPT WebMCP test) plus `2f5ff72` (screenshots). README keeps their ASCII flow, ChatGPT section, and screenshots; hero merges gating with judging copy.
+
+
 
