@@ -107,10 +107,38 @@ npm run dev
 2. **Google Chrome 151+** — `chrome://flags/#enable-webmcp-testing` → Enabled → relaunch. Optional: [Model Context Tool Inspector](https://developer.chrome.com/docs/ai/webmcp).
 3. **No WebMCP client** — use the **Simulate** controls in the Model column. Same `harness.run` path; do not treat missing `document.modelContext` as a broken app.
 
-### What must be true
+### Native ChatGPT WebMCP test
 
+Olympus was tested directly in ChatGPT's in-app browser.
+ChatGPT successfully discovered and invoked these WebMCP tools natively:
+- `search_products`
+- `get_product`
+- `compare_products`
+- `add_to_cart`
+For the high-risk `checkout` tool, ChatGPT's browser security blocked the invocation before it reached Olympus's own approval layer:
+  Auto-review denied permission
+Cloud browser cannot use this WebMCP tool for checkout
+
+```
+  ChatGPT Agent
+    ↓
+ChatGPT Browser Security
+    ↓
+WebMCP
+    ↓
+Olympus MCP Harness
+    ↓
+Human Approval
+    ↓
+Machine
+```
+Low- and medium-risk actions reached Olympus successfully.
+High-risk checkout was independently blocked at the client security layer.
+This is expected defense-in-depth behavior.
+
+### What must be true
 - Five tools registered via `document.modelContext.registerTool` (thin wrappers).
-- Checkout pauses on **HUMAN APPROVAL REQUIRED**. **Reject** = no order.
+- When the WebMCP client permits checkout invocation, Olympus pauses on HUMAN APPROVAL REQUIRED. In ChatGPT's in-app browser, checkout may be blocked earlier by client security.
 - Trace events are real. Metrics are not hardcoded.
 - Purchases are **simulated** — no card, no Stripe.
 - Safe failure is one click: **Invalid search** (`INVALID_INPUT`) and **Timeout then recover** (low-risk retry once). Cart stays put. Checkout still never auto-retries.
