@@ -29,22 +29,30 @@
 
 <br />
 
-> **New here?** WebMCP discovers and connects. Olympus inspects, validates, authorizes, executes, and verifies — and stops the human at checkout.
+> **New here?** WebMCP discovers and connects. Olympus inspects, validates, authorizes, executes, and verifies — and gates high-risk actions behind explicit human approval.
 
 <br />
 
 ```text
-USER GOAL → MODEL (reason · plan · decide)
-                ↓
-         WEBMCP BOUNDARY
-     registerTool · discover · invoke
-                ↓
-      OLYMPUS MCP HARNESS
- Inspect → Validate → Authorize
-        → Execute → Verify
-        → Trace
-                ↓
-            MACHINE
+USER GOAL
+   ↓
+MODEL
+reason · plan · decide
+   ↓
+WEBMCP
+registerTool · discover · invoke
+   ↓
+OLYMPUS MCP HARNESS
+Inspect → Validate → Authorize → Execute → Verify
+                         ↘ Recover on safe failure
+   ↓
+MACHINE
+App Logic · APIs · State
+   ↓
+STRUCTURED RESULT
+   └────────→ MODEL
+
+Trace · Metrics · Audit across the full execution path
 ```
 
 </div>
