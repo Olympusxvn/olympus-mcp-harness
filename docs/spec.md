@@ -229,7 +229,7 @@ olympus-mcp-harness/
 │       ├── metrics.test.ts
 │       ├── recovery.test.ts
 │       └── verifier.test.ts
-├── docs/                   # hackathon artifacts
+├── docs/                   # hackathon artifacts (incl. devpost.md)
 ├── public/                 # background asset if needed
 ├── PROJECT.md
 ├── process-notes.md

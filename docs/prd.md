@@ -76,7 +76,7 @@ Agents can now call websites through WebMCP, but the call itself is ungoverned. 
 
 - As a **contestant**, I want README + live URL + repo license so that judges can test without a call.
   - [x] README: thesis, tool list, Chrome flag steps, ChatGPT in-app browser note, simulate-agent fallback, “no real payments”.
-  - [ ] Public repo, visible open-source license, English Devpost description drafted from this PRD.
+  - [x] Public repo, visible open-source license, English Devpost description drafted from this PRD.
 
 ## What We're Building
 

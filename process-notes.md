@@ -51,4 +51,9 @@
 - Verification: `npm test` — 16 passed, including valid `search_products` envelope with `traceId`.
 - Not committed (learner did not ask this turn).
 
+### Step 12: Devpost
+
+- Learner submitted to [The WebMCP Challenge](https://webmcp.devpost.com/) (29 Aug 2026). Name stayed **Olympus MCP Harness**. Repo made public the same window: https://github.com/Olympusxvn/olympus-mcp-harness — live https://olympus-mcp-harness.vercel.app.
+- Freeze: do not edit repo / live / Devpost after 3 Sep 2026 1:00pm PDT.
+
 

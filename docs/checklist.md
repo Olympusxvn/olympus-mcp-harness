@@ -81,7 +81,7 @@ This is a ~10-day WebMCP Challenge MVP, not a 3-hour classroom app. Items are la
   Acceptance: Live URL loads the luxury shell; simulate path works without local Chrome flags; document URL in README.
   Verify: Open production URL; run simulate search + checkout approval.
 
-- [ ] **12. Submit your project to Devpost**
+- [x] **12. Submit your project to Devpost**
   Spec ref: `prd.md > What We're Building` (the core submission story)
   What to build: Devpost form for [The WebMCP Challenge](https://webmcp.devpost.com/). Name **Olympus MCP Harness** (human-chosen, already locked — do not let an agent rename it). Tagline from scope. Description: why WebMCP, human+agent loop, how `registerTool` + harness were implemented. Built-with: Next.js, WebMCP, TypeScript, Vercel. Screenshots: three-column thesis, trace, **approval modal**, failure. Link public repo + license + live URL. Upload `docs/` artifacts. Demo video < 3 min with audio (script in `PROJECT.md` §22). Do not edit repo/live/Devpost after 3 Sep 2026 1:00pm PDT.
   Acceptance: Submission complete with required fields; judges can test live URL in ChatGPT browser or Chrome+flag; video shows WebMCP + approval.

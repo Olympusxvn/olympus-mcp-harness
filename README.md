@@ -72,7 +72,7 @@ USER GOAL → MODEL (reason · plan · decide)
 
 **No API keys. No real payments. Simulated checkout only.**
 
-Repo stays **private until submission day**, then public for judging.
+Repo is **public** (MIT). No API keys. No real payments. Simulated checkout only.
 
 </div>
 
@@ -217,6 +217,7 @@ Coverage includes invalid search, approval reject, verification fail, low-risk t
 | [docs/prd.md](docs/prd.md) | Stories and acceptance |
 | [docs/spec.md](docs/spec.md) | Architecture and file tree |
 | [docs/checklist.md](docs/checklist.md) | Sequenced build |
+| [docs/devpost.md](docs/devpost.md) | Devpost copy archive |
 | [docs/learner-profile.md](docs/learner-profile.md) | Hackathon learner profile |
 | [process-notes.md](process-notes.md) | Decision log |
 | [LICENSE](LICENSE) | MIT |
@@ -248,8 +249,9 @@ Hackathon definition of done lives in [PROJECT.md](PROJECT.md) §23. Build seque
 - [x] One safe failure path
 - [x] Vercel live URL — [olympus-mcp-harness.vercel.app](https://olympus-mcp-harness.vercel.app)
 - [x] Five WebMCP tools listed (Chrome 151+ flag on / ChatGPT in-app browser)
-- [ ] Demo video &lt; 3 minutes
-- [ ] Repo **public** at submit (kept private until then)
+- [x] Demo video &lt; 3 minutes (on Devpost)
+- [x] Repo **public** (MIT) — [Olympusxvn/olympus-mcp-harness](https://github.com/Olympusxvn/olympus-mcp-harness)
+- [x] Submitted to [The WebMCP Challenge](https://webmcp.devpost.com/)
 
 ---
 

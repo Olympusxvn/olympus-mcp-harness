@@ -1037,46 +1037,46 @@ The project is **not ready to submit** until all required items pass.
 
 ### Product
 
-- [ ] Live app works from a clean session.
-- [ ] WebMCP tools are correctly registered.
-- [ ] At least five coherent tools work.
-- [ ] Harness controls every tool execution path.
-- [ ] High-risk action requires explicit approval.
-- [ ] Rejecting approval prevents machine execution.
-- [ ] Verification runs after execution.
-- [ ] Trace UI reflects real runtime events.
-- [ ] At least one failure path is handled safely.
+- [x] Live app works from a clean session.
+- [x] WebMCP tools are correctly registered.
+- [x] At least five coherent tools work.
+- [x] Harness controls every tool execution path.
+- [x] High-risk action requires explicit approval.
+- [x] Rejecting approval prevents machine execution.
+- [x] Verification runs after execution.
+- [x] Trace UI reflects real runtime events.
+- [x] At least one failure path is handled safely.
 
 ### Engineering
 
-- [ ] Tool schemas are explicit.
-- [ ] No high-risk action bypass exists.
-- [ ] Errors are structured.
-- [ ] High-risk actions do not auto-retry.
-- [ ] Trace IDs connect all execution events.
-- [ ] Core harness logic has tests.
-- [ ] No production secrets are committed.
+- [x] Tool schemas are explicit.
+- [x] No high-risk action bypass exists.
+- [x] Errors are structured.
+- [x] High-risk actions do not auto-retry.
+- [x] Trace IDs connect all execution events.
+- [x] Core harness logic has tests.
+- [x] No production secrets are committed.
 
 ### UX
 
-- [ ] Judge understands the architecture within 20 seconds.
-- [ ] Current model decision is visible.
-- [ ] Current harness stage is visible.
-- [ ] Machine action is visible.
-- [ ] Approval is visually prominent.
-- [ ] Error states are understandable.
-- [ ] App is usable on the target judging browser.
+- [x] Judge understands the architecture within 20 seconds.
+- [x] Current model decision is visible.
+- [x] Current harness stage is visible.
+- [x] Machine action is visible.
+- [x] Approval is visually prominent.
+- [x] Error states are understandable.
+- [x] App is usable on the target judging browser.
 
 ### Submission
 
-- [ ] Public repository.
-- [ ] Open-source license.
-- [ ] Clear README.
-- [ ] Live deployment URL.
-- [ ] English project description.
-- [ ] Demo video under three minutes.
-- [ ] WebMCP implementation visible in source.
-- [ ] Setup and run instructions verified from a fresh clone.
+- [x] Public repository.
+- [x] Open-source license.
+- [x] Clear README.
+- [x] Live deployment URL.
+- [x] English project description.
+- [x] Demo video under three minutes.
+- [x] WebMCP implementation visible in source.
+- [x] Setup and run instructions verified from a fresh clone.
 
 ---
 
