@@ -175,6 +175,8 @@ Olympus runs behind WebMCP site tools inside the live browser context, preservin
 
 This keeps the human interface in the loop while giving agents a structured path to act on the same application state.
 
+WebMCP is page-level and session-aware; MCP is backend-oriented. Olympus is intentionally built behind the WebMCP page boundary, not as a replacement for MCP.
+
 ### Controlled delegation
 
 Olympus explores a WebMCP interaction model where agents can autonomously perform low-risk actions while high-risk actions remain behind explicit human approval.
