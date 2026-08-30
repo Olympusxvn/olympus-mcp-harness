@@ -3,6 +3,8 @@
 > **The model reasons. WebMCP connects. Olympus controls. The machine executes.**
 >
 > Olympus MCP Harness engineers the execution control layer behind the WebMCP boundary.
+>
+> Olympus enables controlled delegation: agents handle routine actions autonomously while humans retain authority over consequential ones.
 
 ---
 
