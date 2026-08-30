@@ -171,6 +171,10 @@ The model decides *what* and *why*. WebMCP is how the agent talks to the web. Ol
 
 The laptop storefront is a **demo machine**. The harness API is generic: register a tool, attach policy metadata, then run it.
 
+Olympus runs behind WebMCP site tools inside the live browser context, preserving the page’s existing state and user experience while adding execution policy, verification, and traceability.
+
+This keeps the human interface in the loop while giving agents a structured path to act on the same application state.
+
 ### Controlled delegation
 
 Olympus explores a WebMCP interaction model where agents can autonomously perform low-risk actions while high-risk actions remain behind explicit human approval.
