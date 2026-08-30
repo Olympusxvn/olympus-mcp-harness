@@ -35,6 +35,10 @@
 >
 > As WebMCP moves agents from reading websites to acting on them, execution becomes a trust boundary. Olympus engineers that boundary.
 >
+> **WebMCP structures the action. Olympus governs the execution.**
+>
+> Olympus enables **controlled delegation**: agents handle routine actions autonomously while humans retain control over consequential ones.
+> 
 > High-risk actions stay behind explicit human approval.
 
 <br />
@@ -166,6 +170,12 @@ As WebMCP moves agents from reading websites to acting on them, execution become
 The model decides *what* and *why*. WebMCP is how the agent talks to the web. Olympus answers *can / should / did it work*. The machine does the work.
 
 The laptop storefront is a **demo machine**. The harness API is generic: register a tool, attach policy metadata, then run it.
+
+### Controlled delegation
+
+Olympus explores a WebMCP interaction model where agents can autonomously perform low-risk actions while high-risk actions remain behind explicit human approval.
+
+The goal is not full autonomy and not manual browsing — it is controlled delegation.
 
 ```ts
 await harness.run("tool_name", input);
