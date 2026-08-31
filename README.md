@@ -230,6 +230,10 @@ flowchart LR
 
 ## 🔌 WebMCP tools
 
+> The future isn’t just better models. It’s better AI systems.🚀
+>
+> Olympus focuses on the system boundary where model reasoning becomes machine execution.
+
 Thin `execute` handlers call `harness.run`. Policy lives in the harness, not in the tool wrapper.
 
 | Tool | Risk | Auto | Human approval | Retry |
