@@ -114,7 +114,7 @@ npm run dev
 ### Test WebMCP (agent path)
 
 1. **ChatGPT in-app browser** — WebMCP on by default. Open the live URL (or localhost if your client allows it). Goal: *Find the best laptop under $1,500 for AI development and prepare it for purchase.*
-2. **Google Chrome 151+** — `chrome://flags/#enable-webmcp-testing` → Enabled → relaunch. Optional: [Model Context Tool Inspector](https://developer.chrome.com/docs/ai/webmcp).
+2. **Google Chrome 149+** — `chrome://flags/#enable-webmcp-testing` → Enabled → relaunch. Optional: [Model Context Tool Inspector](https://developer.chrome.com/docs/ai/webmcp).
 3. **No WebMCP client** — use the **Simulate** controls in the Model column. Same `harness.run` path; do not treat missing `document.modelContext` as a broken app.
 
 ### Native ChatGPT WebMCP test
