@@ -75,7 +75,7 @@ function bannerCopy(state: BannerState): {
         eyebrow: "WebMCP unavailable",
         title: "This browser does not expose document.modelContext.",
         detail:
-          "Simulate still works. For the agent path: Chrome 151+ with chrome://flags/#enable-webmcp-testing, or ChatGPT’s in-app browser.",
+          "Simulate still works. For the agent path: Chrome 149+ with chrome://flags/#enable-webmcp-testing, or ChatGPT’s in-app browser.",
       };
     case "registering":
       return {
