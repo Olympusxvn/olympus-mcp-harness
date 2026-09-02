@@ -29,6 +29,8 @@
 
 <br />
 
+> Judges: See the [2–3 minute testing guide](./JUDGE_TESTING.md) for quick verification in ChatGPT or Codex.
+> 
 > **For developers exposing real actions to AI agents through WebMCP.**
 >
 > WebMCP makes actions available to models. Olympus makes those actions safe to execute.
