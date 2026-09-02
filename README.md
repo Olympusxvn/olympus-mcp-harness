@@ -335,7 +335,7 @@ Hackathon definition of done lives in [PROJECT.md](PROJECT.md) §23. Build seque
 - [x] Trace + honest metrics
 - [x] One safe failure path
 - [x] Vercel live URL — [olympus-mcp-harness.vercel.app](https://olympus-mcp-harness.vercel.app)
-- [x] Five WebMCP tools listed (Chrome 151+ flag on / ChatGPT in-app browser)
+- [x] Five WebMCP tools listed (Chrome 149+ flag on / ChatGPT in-app browser)
 - [x] Demo video &lt; 3 minutes (on Devpost)
 - [x] Repo **public** (MIT) — [Olympusxvn/olympus-mcp-harness](https://github.com/Olympusxvn/olympus-mcp-harness)
 - [x] Submitted to [The WebMCP Challenge](https://webmcp.devpost.com/)
