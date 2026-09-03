@@ -40,6 +40,8 @@
 > **WebMCP structures the action. Olympus governs the execution.**
 >
 > Olympus enables **controlled delegation**: agents handle routine actions autonomously while humans retain control over consequential ones.
+>
+> **E-commerce/Retail demo:** the agent can search products, compare options, prepare a cart, and approach checkout while Olympus keeps purchase execution controlled.
 > 
 > High-risk actions stay behind explicit human approval.
 
@@ -171,13 +173,23 @@ As WebMCP moves agents from reading websites to acting on them, execution become
 
 The model decides *what* and *why*. WebMCP is how the agent talks to the web. Olympus answers *can / should / did it work*. The machine does the work.
 
-The laptop storefront is a **demo machine**. The harness API is generic: register a tool, attach policy metadata, then run it.
+The laptop storefront is the concrete **E-commerce/Retail** demo machine. The harness API is generic: register a tool, attach policy metadata, then run it.
 
 Olympus runs behind WebMCP site tools inside the live browser context, preserving the page’s existing state and user experience while adding execution policy, verification, and traceability.
 
 This keeps the human interface in the loop while giving agents a structured path to act on the same application state.
 
 WebMCP is page-level and session-aware; MCP is backend-oriented. Olympus is intentionally built behind the WebMCP page boundary, not as a replacement for MCP.
+
+### Who it's for
+
+**E-commerce and retail web apps:** Olympus demonstrates how AI agents can safely help users search products, compare options, prepare a cart, and approach checkout without turning high-risk purchase actions into blind automation.
+
+**WebMCP developers:** developers exposing real actions to AI agents and needing a reliable layer for validation, authorization, approval, recovery, verification, and observability.
+
+**Human users and judges:** they can see the current model decision, harness stage, machine action, execution trace, and a non-skippable approval gate for high-risk actions.
+
+**WebMCP-capable agents and clients:** such as ChatGPT’s in-app browser or Chrome with WebMCP enabled. The agent interacts through `document.modelContext` tools rather than relying on brittle UI actuation for the core workflow. The laptop storefront is the concrete retail demo; the harness pattern is designed to generalize to other WebMCP workflows.
 
 ### Controlled delegation
 
